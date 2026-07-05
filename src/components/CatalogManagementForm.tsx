@@ -987,30 +987,30 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
       {/* PRODUCT AVAILABILITY FILTER SEGMENTS */}
       <div 
         id="inventory-availability-filter-bar"
-        className="bg-white border border-slate-200/80 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-3xs text-right animate-fadeIn"
+        className="bg-white border border-slate-200/80 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm text-right animate-fadeIn mb-8"
       >
-        <div className="flex items-center gap-2 select-none w-full sm:w-auto">
-          <span className="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-500 shadow-3xs flex items-center justify-center shrink-0">
-            <Layers className="h-4 w-4 text-slate-550" />
+        <div className="flex items-center gap-4 select-none w-full md:w-auto text-right">
+          <span className="p-3 rounded-full bg-slate-50 border border-slate-200 text-slate-500 shadow-3xs flex items-center justify-center shrink-0">
+            <Layers className="h-6 w-6 text-slate-600" />
           </span>
-          <div className="space-y-0.5">
-            <h3 className="text-xs font-black text-slate-800 tracking-tight">
-              {isRtl ? "זמינות מוצרים" : "Inventory Availability"}
-            </h3>
-            <p className="text-[10px] text-slate-400 font-semibold leading-tight">
+          <div className="space-y-1">
+            <h1 className="text-3xl sm:text-[32px] font-extrabold text-slate-900 tracking-tight leading-none">
+              {isRtl ? "זמינות מוצרים" : "Product Availability"}
+            </h1>
+            <p className="text-[16px] sm:text-[17px] text-slate-500 font-medium leading-tight">
               {isRtl ? "סנן פריטים לפי רמות מלאי נוכחיות בקטלוג" : "Filter warehouse records by exact inventory count"}
             </p>
           </div>
         </div>
 
         {/* Modern Segmented tab selector */}
-        <div className="flex items-center bg-slate-100 p-1.5 rounded-xl w-full sm:w-auto relative border border-slate-205">
+        <div className="flex flex-wrap items-center bg-slate-100 p-1.5 rounded-2xl w-full md:w-auto relative border border-slate-200 gap-2">
           <button
             type="button"
             onClick={() => setInventoryFilter("all")}
-            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs font-bold transition-all duration-150 select-none cursor-pointer whitespace-nowrap outline-none ${
+            className={`flex-1 md:flex-none px-6 py-3 rounded-xl text-[15px] sm:text-base font-bold transition-all duration-150 select-none cursor-pointer whitespace-nowrap outline-none ${
               inventoryFilter === "all"
-                ? "bg-slate-900 text-white shadow-sm"
+                ? "bg-slate-900 text-white shadow-md font-black"
                 : "text-slate-600 hover:bg-slate-200 hover:text-slate-800"
             }`}
           >
@@ -1019,28 +1019,28 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
           <button
             type="button"
             onClick={() => setInventoryFilter("in_stock")}
-            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs font-bold transition-all duration-150 select-none cursor-pointer whitespace-nowrap outline-none ${
+            className={`flex-1 md:flex-none px-6 py-3 rounded-xl text-[15px] sm:text-base font-bold transition-all duration-150 select-none cursor-pointer whitespace-nowrap outline-none ${
               inventoryFilter === "in_stock"
-                ? "bg-emerald-600 text-white shadow-sm font-black"
+                ? "bg-emerald-600 text-white shadow-md font-black"
                 : "text-slate-600 hover:bg-slate-200 hover:text-slate-800"
             }`}
           >
-            <span className="inline-flex items-center gap-1.5 justify-center">
-              <span className={`w-1.5 h-1.5 rounded-full ${inventoryFilter === "in_stock" ? "bg-white" : "bg-emerald-500"} shrink-0`} />
+            <span className="inline-flex items-center gap-2 justify-center">
+              <span className={`w-2 h-2 rounded-full ${inventoryFilter === "in_stock" ? "bg-white animate-pulse" : "bg-emerald-500"} shrink-0`} />
               <span>{isRtl ? "זמין במלאי" : "Available in Stock"}</span>
             </span>
           </button>
           <button
             type="button"
             onClick={() => setInventoryFilter("out_of_stock")}
-            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs font-bold transition-all duration-150 select-none cursor-pointer whitespace-nowrap outline-none ${
+            className={`flex-1 md:flex-none px-6 py-3 rounded-xl text-[15px] sm:text-base font-bold transition-all duration-150 select-none cursor-pointer whitespace-nowrap outline-none ${
               inventoryFilter === "out_of_stock"
-                ? "bg-rose-600 text-white shadow-sm font-black"
+                ? "bg-rose-600 text-white shadow-md font-black"
                 : "text-slate-600 hover:bg-slate-205 hover:text-slate-800"
             }`}
           >
-            <span className="inline-flex items-center gap-1.5 justify-center">
-              <span className={`w-1.5 h-1.5 rounded-full ${inventoryFilter === "out_of_stock" ? "bg-white" : "bg-rose-500"} shrink-0`} />
+            <span className="inline-flex items-center gap-2 justify-center">
+              <span className={`w-2 h-2 rounded-full ${inventoryFilter === "out_of_stock" ? "bg-white animate-pulse" : "bg-rose-500"} shrink-0`} />
               <span>{isRtl ? "אזל מהמלאי" : "Out of Stock"}</span>
             </span>
           </button>
@@ -1104,62 +1104,62 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
             ) : (
               <>
                 {/* MAIN DESKTOP GRID TABLE */}
-                <div className="hidden md:block w-full overflow-x-auto border border-slate-200/80 rounded-xl">
+                <div className="hidden md:block w-full overflow-x-auto border border-slate-200/80 rounded-2xl shadow-sm bg-white">
                   <table className="w-full table-fixed border-collapse align-middle animate-fadeIn" style={{ minWidth: "100%", width: "100%" }}>
                   <colgroup>
-                    <col style={{ width: "13%" }} />
-                    <col style={{ width: "6%" }} />
-                    <col style={{ width: "22%" }} />
-                    <col style={{ width: "9%" }} />
+                    <col style={{ width: "18%" }} />
+                    <col style={{ width: "11%" }} />
+                    <col style={{ width: "24%" }} />
                     <col style={{ width: "10%" }} />
-                    <col style={{ width: "32%" }} />
-                    <col style={{ width: "8%" }} />
+                    <col style={{ width: "10%" }} />
+                    <col style={{ width: "21%" }} />
+                    <col style={{ width: "6%" }} />
                   </colgroup>
-                  <thead className="bg-[#1F2937] text-white text-[11px] font-bold uppercase tracking-wider select-none shrink-0 border-b border-[#1F2937]">
-                    <tr>
+                  <thead className="bg-[#1F2937] text-white text-[18px] font-bold uppercase tracking-wider select-none shrink-0 border-b border-[#1F2937]">
+                    <tr className="h-16">
                       <th
                         onClick={() => handleSort("sku")}
-                        className="px-4 py-3.5 text-right cursor-pointer hover:bg-slate-700 transition-colors"
+                        className="px-6 py-4 text-right cursor-pointer hover:bg-slate-700 transition-colors align-middle"
                       >
-                        <div className="flex items-center justify-start gap-1.5">
+                        <div className="flex items-center justify-start gap-2">
                           <span>{isRtl ? "מק״ט, קטגוריה ומדף" : "SKU, Category & Shelf"}</span>
                           {renderSortIndicator("sku")}
                         </div>
                       </th>
-                      <th className="px-4 py-3.5 text-center">{isRtl ? "תמונה" : "Photo"}</th>
+                      <th className="px-6 py-4 text-center align-middle">{isRtl ? "תמונה" : "Photo"}</th>
                       <th
                         onClick={() => handleSort("name")}
-                        className="px-4 py-3.5 text-right cursor-pointer hover:bg-slate-700 transition-colors"
+                        className="px-6 py-4 text-right cursor-pointer hover:bg-slate-700 transition-colors align-middle"
                       >
-                        <div className="flex items-center justify-start gap-1.5">
+                        <div className="flex items-center justify-start gap-2">
                           <span>{isRtl ? "שם פריט" : "Item Display Name"}</span>
                           {renderSortIndicator("name")}
                         </div>
                       </th>
                       <th
                         onClick={() => handleSort("stock")}
-                        className="px-4 py-3.5 text-center cursor-pointer hover:bg-slate-700 transition-colors"
+                        className="px-6 py-4 text-center cursor-pointer hover:bg-slate-700 transition-colors align-middle"
                       >
-                        <div className="flex items-center justify-center gap-1.5">
+                        <div className="flex items-center justify-center gap-2">
                           <span>{isRtl ? "מלאי" : "Inventory"}</span>
                           {renderSortIndicator("stock")}
                         </div>
                       </th>
                       <th
                         onClick={() => handleSort("price")}
-                        className="px-4 py-3.5 text-right cursor-pointer hover:bg-slate-700 transition-colors"
+                        className="px-6 py-4 text-center cursor-pointer hover:bg-slate-700 transition-colors align-middle"
                       >
-                        <div className="flex items-center justify-start gap-1.5">
+                        <div className="flex items-center justify-center gap-2">
                           <span>{isRtl ? "מחיר" : "Price"}</span>
                           {renderSortIndicator("price")}
                         </div>
                       </th>
-                      <th className="px-4 py-3.5 text-right">{isRtl ? "מאפיינים" : "Attributes"}</th>
-                      <th className="px-4 py-3.5 text-center">{isRtl ? "פעולות" : "Actions"}</th>
+                      <th className="px-6 py-4 text-right align-middle">{isRtl ? "מאפיינים" : "Attributes"}</th>
+                      <th className="px-6 py-4 text-center align-middle">{isRtl ? "פעולות" : "Actions"}</th>
                     </tr>
                   </thead>
 
-                  <tbody className="divide-y divide-slate-150/80 bg-white">
+                  <tbody className="divide-y divide-slate-150 bg-white">
                     {currentItems.map((item, index) => {
                       // Fetch item linked attribute mappings
                       const itemLinkedMappings = itemMappings.filter((m) => m.itemId === item.sku);
@@ -1198,13 +1198,13 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
                       return (
                         <tr
                           key={item.sku}
-                          className={`group h-[76px] transition-all duration-150 align-middle hover:bg-slate-50 hover:shadow-2xs cursor-pointer ${
-                            isSelected ? "bg-blue-50/15" : index % 2 === 0 ? "bg-white" : "bg-slate-50/25"
+                          className={`group min-h-[110px] h-[110px] transition-all duration-150 align-middle hover:bg-slate-50/85 hover:shadow-2xs cursor-pointer ${
+                            isSelected ? "bg-blue-50/15" : index % 2 === 0 ? "bg-white" : "bg-slate-50/10"
                           }`}
                         >
                           {/* SKU CODE, SHELF & CATEGORY (NO CROPPING) */}
-                          <td className="px-4 py-3 align-middle text-right whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
-                            <div className="flex flex-col items-start gap-1">
+                          <td className="px-6 py-5 align-middle text-right whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                            <div className="flex flex-col items-start gap-2.5">
                               {onSkuClick ? (
                                 <button
                                   type="button"
@@ -1212,20 +1212,20 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
                                     e.stopPropagation();
                                     onSkuClick(item.sku);
                                   }}
-                                  className="font-mono text-blue-600 hover:text-blue-800 hover:underline font-bold text-xs cursor-pointer inline-block border border-blue-200/50 hover:border-blue-300 bg-blue-50/50 hover:bg-blue-50 rounded px-1.5 py-0.5 text-right tracking-wider shadow-3xs whitespace-nowrap"
+                                  className="font-mono text-blue-600 hover:text-blue-800 hover:underline font-extrabold text-[18px] cursor-pointer inline-block border border-blue-200/60 hover:border-blue-300 bg-blue-50/40 hover:bg-blue-100/60 rounded-lg px-3 py-1 text-right tracking-wider shadow-2xs whitespace-nowrap transition-colors"
                                   title={isRtl ? "לחץ להגדרת שיוך מאפיינים לפריט זה" : "Click to manage attribute mappings for this item"}
                                 >
                                   {item.sku}
                                 </button>
                               ) : (
-                                <span className="font-mono text-slate-800 font-bold text-xs bg-slate-100 rounded px-1.5 py-0.5 border border-slate-205 whitespace-nowrap">
+                                <span className="font-mono text-slate-800 font-extrabold text-[18px] bg-slate-100 rounded-lg px-3 py-1 border border-slate-205 whitespace-nowrap shadow-2xs">
                                   {item.sku}
                                 </span>
                               )}
-                              <div className="flex items-center gap-1 text-[10px] text-slate-455 font-semibold whitespace-nowrap select-none">
+                              <div className="flex items-center gap-2 text-[15px] text-slate-500 font-medium whitespace-nowrap select-none">
                                 <span className="font-bold shrink-0">{isRtl ? `מדף: ${item.shelf}` : `Shelf: ${item.shelf}`}</span>
                                 <span className="text-slate-300">|</span>
-                                <span className={`inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[9px] font-bold leading-none ${catTheme.bg} truncate max-w-[95px]`} title={isRtl ? item.categoryHe : item.categoryEn}>
+                                <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[13px] font-bold leading-none ${catTheme.bg} truncate max-w-[150px]`} title={isRtl ? item.categoryHe : item.categoryEn}>
                                   <span className="shrink-0">🏷️</span>
                                   <span className="truncate">{isRtl ? item.categoryHe : item.categoryEn}</span>
                                 </span>
@@ -1234,7 +1234,7 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
                           </td>
 
                           {/* PRODUCT BEAUTIFUL MINI IMAGE */}
-                          <td className="px-4 py-3 text-center align-middle whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                          <td className="px-6 py-5 text-center align-middle whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
                             <div
                               onClick={() => {
                                 if (!isAuthorized) {
@@ -1248,20 +1248,20 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
                                 }
                                 startEditImage(item);
                               }}
-                              className="w-12 h-12 rounded-lg bg-slate-50 border border-slate-200 overflow-hidden flex items-center justify-center shrink-0 shadow-3xs relative group cursor-pointer hover:ring-2 hover:ring-blue-500 hover:scale-[1.03] transition-all duration-150 mx-auto"
+                              className="w-[84px] h-[84px] rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden flex items-center justify-center shrink-0 shadow-sm relative group cursor-pointer hover:ring-4 hover:ring-blue-500/20 hover:scale-[1.04] transition-all duration-200 mx-auto"
                               title={isRtl ? "ערוך תמונת פריט" : "Edit product picture"}
                             >
                               <img
                                 src={GetItemPrimaryImageBySku(item.sku, itemPictureUrls, isRtl)}
                                 alt={isRtl ? item.nameHe : item.nameEn}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-2xl"
                                 style={{ filter: item.imageFilter }}
                                 referrerPolicy="no-referrer"
                                 loading="lazy"
                               />
                               {isAuthorized && (
-                                <div className="absolute inset-0 bg-slate-950/45 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                                  <Camera className="h-4.5 w-4.5 text-white" />
+                                <div className="absolute inset-0 bg-slate-950/45 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                  <Camera className="h-6 w-6 text-white" />
                                 </div>
                               )}
                             </div>
@@ -1269,35 +1269,41 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
 
                           {/* ITEM NAME */}
                           <td 
-                            className="px-4 py-3 align-middle text-right truncate max-w-0"
+                            className="px-6 py-5 align-middle text-right truncate max-w-0"
                             title={`${isRtl ? item.nameHe : item.nameEn} | ${isRtl ? item.nameEn : item.nameHe}`}
                           >
-                            <div className="font-extrabold text-xs sm:text-xs text-slate-900 truncate">
-                              {isRtl ? item.nameHe : item.nameEn}
-                            </div>
-                            <div className="text-[10px] text-slate-455 mt-0.5 truncate font-medium flex items-center justify-end gap-1">
-                              <span className="truncate">{isRtl ? item.nameEn : item.nameHe}</span>
+                            <div className="flex flex-col gap-2">
+                              <div className="font-bold text-[19px] text-slate-900 truncate leading-snug">
+                                {isRtl ? item.nameHe : item.nameEn}
+                              </div>
+                              <div className="text-[15px] text-slate-550 truncate font-medium flex items-center justify-start gap-1">
+                                <span className="truncate">{isRtl ? item.nameEn : item.nameHe}</span>
+                              </div>
                             </div>
                           </td>
 
                           {/* INVENTORY COUNT STATUS */}
-                          <td className="px-4 py-3 text-center align-middle whitespace-nowrap">
-                            {renderInventoryBadge(item.stock, isRtl ? item.unitHe : item.unitEn)}
+                          <td className="px-6 py-5 text-center align-middle whitespace-nowrap">
+                            <div className="flex justify-center items-center h-full">
+                              {renderInventoryBadge(item.stock, isRtl ? item.unitHe : item.unitEn)}
+                            </div>
                           </td>
 
                           {/* PRICE */}
-                          <td className="px-4 py-3 align-middle whitespace-nowrap text-right">
-                            <strong className="font-mono text-slate-900 text-xs sm:text-sm tracking-tight font-black">
-                              ₪{item.price.toFixed(2)}
-                            </strong>
-                            <span className="text-[9px] text-slate-400 block font-semibold leading-tight">
-                              {isRtl ? "מע\"מ כלול" : "VAT incl."}
-                            </span>
+                          <td className="px-6 py-5 align-middle whitespace-nowrap text-center">
+                            <div className="flex flex-col items-center justify-center gap-1.5 h-full">
+                              <span className="font-mono text-slate-900 text-[21px] font-extrabold tracking-tight leading-none">
+                                ₪{item.price.toFixed(2)}
+                              </span>
+                              <span className="text-[13px] text-slate-400 font-semibold leading-none">
+                                {isRtl ? "מחיר כולל מע\"מ" : "VAT incl."}
+                              </span>
+                            </div>
                           </td>
 
                           {/* SPECIAL COMPACT ATTRIBUTES CHIPS (NO CROPPING) */}
                           <td 
-                            className="px-4 py-3 align-middle relative text-right cursor-pointer hover:bg-slate-50/70 transition-colors select-none"
+                            className="px-6 py-5 align-middle relative text-right cursor-pointer hover:bg-slate-100/30 transition-colors select-none"
                             onClick={() => setAttributesModalItem(item)}
                           >
                             {flatValues.length > 0 ? (
@@ -1305,7 +1311,7 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
                                 {visibleChips.map((chip) => (
                                   <span
                                     key={chip.id}
-                                    className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[9.5px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-205 transition-colors shadow-3xs cursor-default whitespace-nowrap shrink-0"
+                                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-[13px] font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-205 transition-colors shadow-3xs cursor-default whitespace-nowrap shrink-0"
                                     title={`${chip.typeName}: ${chip.label}`}
                                   >
                                     <span>{chip.label}</span>
@@ -1319,32 +1325,34 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
                                       setAttributesModalItem(item);
                                     }}
                                     type="button"
-                                    className="px-1.5 py-0.5 text-[10px] font-black bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 rounded shadow-3xs transition cursor-pointer select-none"
+                                    className="px-2 py-1.5 text-[12px] font-extrabold bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 rounded-lg shadow-3xs transition cursor-pointer select-none"
                                     title={isRtl ? "הצג את כל המאפיינים ששוייכו" : "Click to view all configuration parameters"}
                                   >
                                     +{overflowCount}
                                   </button>
                                 )}
                               </div>
-                            ) : null}
-
-
+                            ) : (
+                              <span className="text-[13px] text-slate-300 italic">
+                                {isRtl ? "אין מאפיינים" : "No attributes"}
+                              </span>
+                            )}
                           </td>
 
                           {/* ROW ACTIONS MENU DROPDOWN */}
-                          <td className="px-4 py-3 text-center align-middle whitespace-nowrap relative" onClick={(e) => e.stopPropagation()}>
+                          <td className="px-6 py-5 text-center align-middle whitespace-nowrap relative" onClick={(e) => e.stopPropagation()}>
                             <div className="relative flex items-center justify-center">
-                              {/* Show menu trigger (MoreVertical) always */}
+                              {/* Show menu trigger (MoreVertical) always with beautiful sizing */}
                               <div className="transition-opacity duration-150 opacity-100">
                                 <button
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     setActiveActionMenuSku(activeActionMenuSku === item.sku ? null : item.sku);
                                   }}
-                                  className="p-1 px-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 transition cursor-pointer shadow-3xs"
+                                  className="w-11 h-11 flex items-center justify-center rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 transition duration-150 cursor-pointer shadow-sm hover:border-slate-300 hover:shadow"
                                   title={isRtl ? "פעולות" : "Actions"}
                                 >
-                                  <span className="font-bold text-xs select-none">⋮</span>
+                                  <MoreVertical className="h-5 w-5 shrink-0" />
                                 </button>
                               </div>
 
