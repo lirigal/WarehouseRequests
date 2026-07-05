@@ -1,0 +1,375 @@
+/* 
+   FinancialData.css - Enterprise-level Financial Exchange Rates Dashboard Stylesheet
+   Designed for: Bank of Israel Exchange Rates Viewer (Volcani Agricultural Research Organization)
+   Locale: Hebrew RTL (Right-to-Left) with fallback support for LTR
+*/
+
+/* Container & Layout */
+.financial-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px 15px;
+}
+
+/* Header Area */
+.financial-header-section {
+    border-bottom: 3px solid #1e3a8a; /* Deep Enterprise Blue Accent */
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+.financial-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.financial-title {
+    color: #1e3a8a;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.financial-title i {
+    color: #3b82f6; /* Modern sky-blue icon color */
+}
+
+.financial-subtitle {
+    color: #64748b;
+    font-size: 13px;
+    margin: 6px 0 0 0;
+}
+
+/* User Badge */
+.user-identity-badge {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #475569;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Enterprise Control Panel & Toolbar */
+.enterprise-toolbar {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.toolbar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 13px;
+    color: #1e293b;
+}
+
+/* Controls styling */
+.form-input-date {
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #334155;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+    max-width: 280px;
+}
+
+.form-input-date:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Flat Button with custom layout styled like the attached factory mockup */
+.btn-refresh-orb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    border: 1px solid #3b82f6;
+    background-image: linear-gradient(to bottom, #1e40af, #1e3a8a);
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(30, 58, 138, 0.2);
+    text-transform: uppercase;
+}
+
+.btn-refresh-orb:hover {
+    background-image: linear-gradient(to bottom, #2563eb, #1d4ed8);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-refresh-orb:active {
+    transform: translateY(1px);
+}
+
+.btn-refresh-orb .spin-icon {
+    animation: none;
+}
+
+.btn-refresh-orb:hover .spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Status Notifications & Message Banners */
+.alert-feedback {
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+
+.alert-error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.alert-info {
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #075985;
+}
+
+/* Loading Glassmorphism Cover */
+.loading-cover {
+    display: none; /* Controlled via JS */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.loading-spinner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f1f5f9;
+    border-top: 4px solid #1e3a8a;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.loading-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* Exchange Rate Corporate Grid Table */
+.rates-grid-container {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+    font-size: 13px;
+}
+
+.rates-table thead {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+.rates-table th {
+    padding: 14px 18px;
+    font-weight: 700;
+    border-bottom: 2px solid #cbd5e1;
+    text-transform: uppercase;
+}
+
+.rates-table th.right-align {
+    text-align: right;
+}
+
+.rates-table th.center-align {
+    text-align: center;
+}
+
+.rates-table tbody tr {
+    transition: background-color 0.15s ease-in-out;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.rates-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Hover effects matching corporate requirements */
+.rates-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.rates-table td {
+    padding: 14px 18px;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.currency-code-badge {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-weight: 700;
+    padding: 4px 8px;
+    background-color: #eff6ff;
+    border: 1px solid #dbeafe;
+    color: #1e40af;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.rate-value-text {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0f172a;
+}
+
+.rate-trend-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.trend-up {
+    color: #15803d;
+}
+
+.trend-down {
+    color: #b91c1c;
+}
+
+.trend-flat {
+    color: #64748b;
+}
+
+/* Footer & Disclaimers */
+.financial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    font-size: 11px;
+    color: #94a3b8;
+    padding: 0 4px;
+}
+
+.source-branding {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* RTL Helpers specifically for Hebrew */
+[direction="rtl"] .rates-table,
+.financial-container[style*="direction: rtl"] .rates-table {
+    text-align: right;
+}
+
+[direction="rtl"] .rates-table th,
+.financial-container[style*="direction: rtl"] .rates-table th {
+    text-align: right;
+}
+
+/* Extra stats boxes */
+.financial-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.summary-card-title {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.summary-card-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e293b;
+}

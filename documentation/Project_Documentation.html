@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Volcani Center Warehouse Request & Inventory System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fa;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      font-size: 2.2em;
+      margin-top: 0;
+    }
+    h2 {
+      color: #7f8c8d;
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+    h3 {
+      color: #2980b9;
+      margin-top: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+    h4 {
+      color: #16a085;
+      margin-top: 20px;
+    }
+    p, li {
+      font-size: 1em;
+      color: #555;
+    }
+    code {
+      background-color: #f8f9fa;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #c7254e;
+    }
+    .toc {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+      border: 1px solid #eef2f5;
+    }
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .toc li {
+      margin-bottom: 8px;
+    }
+    .toc a {
+      text-decoration: none;
+      color: #2980b9;
+      font-weight: bold;
+    }
+    .toc a:hover {
+      text-decoration: underline;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: #eee;
+      margin: 40px 0;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.85em;
+      color: #aaa;
+      margin-top: 60px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Volcani Center Warehouse Request & Inventory System</h1>
+    <h2>Enterprise Dual-Stack Technical Overview, End-User Manual & Administration Guide</h2>
+    <p><strong>תאריך הפקה:</strong> 7/5/2026</p>
+    
+    <div class="toc">
+      <h3>תוכן עניינים (Table of Contents)</h3>
+      <ul>        <li><a href="#sec-1">פרק 1: Project Overview</a></li>
+        <li><a href="#sec-2">פרק 2: Application Architecture</a></li>
+        <li><a href="#sec-3">פרק 3: Database Documentation</a></li>
+        <li><a href="#sec-4">פרק 4: Solution & Code Structure</a></li>
+        <li><a href="#sec-5">פרק 5: Business Logic & Request Lifecycle</a></li>
+        <li><a href="#sec-6">פרק 6: Authentication & Security</a></li>
+        <li><a href="#sec-7">פרק 7: User Manual - End User Guide</a></li>
+        <li><a href="#sec-8">פרק 8: User Manual - Administrator Guide</a></li>
+        <li><a href="#sec-9">פרק 9: Troubleshooting & Support</a></li>
+      </ul>
+    </div>
+    <hr>
+    <div id="sec-1">
+      <h3>פרק 1: Project Overview</h3>
+      <div><p><h4>1.1 Purpose of the Application</h4></p><p>The Volcani Center Warehouse Request & Inventory System (מערכת מאפייני פריטים ומלאי) is a robust, production-ready full-stack enterprise application designed to streamline agricultural research logistics, warehouse inventory control, item classification, and physical checkout request fulfillment (Nipuk - ניפוק).</p><p>Originally architected as an ASP.NET Web Forms application using MS SQL Server 2012+, the system has been migrated to a modern, highly responsive React 19 single-page application (SPA) frontend, backed by an Express 4 REST and proxy server, and connected to Supabase PostgreSQL for cloud storage. It retains backward compatibility with legacy relational designs, featuring dual-schema representations for both Microsoft SQL Server and PostgreSQL.</p><p><h4>1.2 Main Business Processes</h4></p><p><ul><li><strong>Catalog Auditing & Maintenance</strong>:  Real-time item tracking (Makat - מק'ט), stock control, price valuations, and shelf locations.</li></ul></p><p><ul><li><strong>Dynamic Attribute Parameterization</strong>:  Association of complex, variable item attributes (such as Size, Color, Version, Model) to specific warehouse goods without requiring schema alterations.</li></ul></p><p><ul><li><strong>Checkout Request Submission</strong>:  Dynamic request forms (טופס הגשת בקשה) enabling researchers and field operators to select catalog items, identify custom attributes, check real-time stock levels, and submit requisitions.</li></ul></p><p><ul><li><strong>Approval & Dispatch Flow (Nipuk - ניפוק)</strong>:  High-security workflow for storekeepers and warehouse operators to transition items from active requests to physically dispatched delivery notes.</li></ul></p><p><ul><li><strong>Bank of Israel Exchange Integration</strong>:  Automated synchronization of daily foreign exchange rates, allowing researchers and finance clerks to review valuations in multiple currencies (USD, EUR, GBP, CAD, JPY, ILS) with daily trends.</li></ul></p><p><h4>1.3 Target Users & Personas</h4></p><p><ul><li><strong>ADMIN</strong>:  High-level system administrators with full write access, responsible for user management, role mapping, data exporters, database auditing, and catalog synchronization.</li></ul></p><p><ul><li><strong>MANAGER</strong>:  Logistical managers who maintain item categories, edit master attribute rules, white-list attribute values per SKU, and approve pending warehouse requests.</li></ul></p><p><ul><li><strong>STOREKEEPER</strong>:  Physical warehouse floor workers who operate the "Dispatch / Nipuk" screen, verify active stock lines, pack shipments, log physical signatures, and generate dispatch notes.</li></ul></p><p><ul><li><strong>STAFF</strong>:  Researchers and laboratory technicians who browse the inventory catalog and submit requests for research supplies.</li></ul></p><p><h4>1.4 Technology Stack</h4></p><p><ul><li><strong>Legacy Stack</strong>:  ASP.NET Web Forms, .NET Framework 4.8, C# BLL & DAL layers, Npgsql .NET driver, MS SQL Server 2012+, IIS Express, and Web.config.</li></ul></p><p><ul><li><strong>Modernized Stack</strong>:  React 19 SPA, TypeScript 5.8, Vite 6 build engine, Tailwind CSS 4 utility classes, Lucide icons, Motion (Framer Motion) animations.</li></ul></p><p><ul><li><strong>Backend Stack</strong>:  Express 4 proxy server running on Node.js / Cloud Run, '@google/genai' TypeScript API client, and Supabase JS Client for database integration.</li></ul></p><p><ul><li><strong>Database Layer</strong>:  Supabase PostgreSQL 14+, Row-Level Security (RLS) policies, transactional stored procedures, and daily financial trend caching tables.</li></ul></p></div>
+    </div>
+    <hr>
+    <div id="sec-2">
+      <h3>פרק 2: Application Architecture</h3>
+      <div><p><h4>2.1 Multi-Layered Architecture</h4></p><p>The modernized system implements a full-stack, decoupled architecture that provides resilience, near-instant query responses, and direct real-time database transactions.</p><p><ul><li><strong>Presentation Layer (React 19)</strong>: </li></ul></p><p>   - Built on a Component-Driven design using TypeScript.</p><p>   - Modular layout managed by 'EnterpriseLayout.tsx'.</p><p>   - Rich UX elements with custom tabs, search indexing, image galleries, and RTL Hebrew translation layers.</p><p>   - Responsive design powered by Tailwind CSS 4, adjusting seamlessly between touch screens (tablets) and high-density desk monitors.</p><p><ul><li><strong>Backend Proxy Layer (Express 4)</strong>: </li></ul></p><p>   - Handles API routes to shield the database and third-party secrets (such as the Gemini API Key or Supabase Admin keys) from browser inspection.</p><p>   - Serves as the static asset provider in production, executing compiled React bundles directly inside containers on port 3000.</p><p>   - Hosts the Bank of Israel (BOI) Proxy router, fetching daily XML exchange data, converting it to JSON, and storing it locally to reduce external network calls.</p><p><ul><li><strong>Data Access & Service Layer (dbService.ts & supabase.ts)</strong>: </li></ul></p><p>   - A unified database access abstraction layer.</p><p>   - Implements automated Snake_Case to CamelCase property mappings.</p><p>   - Coordinates live queries directly with Supabase. Because all operational data transactions must run online, the system enforces online-only checks, utilizing client-side state memory solely as a defensive wrapper to prevent UI crashes if connection is momentarily interrupted.</p><p><ul><li><strong>Persistence Layer (Supabase / PostgreSQL & SQL Server 2012+)</strong>: </li></ul></p><p>   - Primary cloud storage utilizing Supabase PostgreSQL, ensuring transactional guarantees.</p><p>   - Fully optimized indices for fast lookups on SKU, active statuses, and audit logging.</p><p>   - Stored procedures and triggers mimicking legacy MS SQL Server procedures ('sp_GetItemAttributesForSelection', 'sp_SaveItemAttributeConfig', etc.) to enforce business logic on the database engine level.</p><p><h4>2.2 Dual-Language Architecture (HE/EN)</h4></p><p>A central globalization system ('globalization' in Web.config and React contexts) dynamically flips text directions (LTR / RTL), language keys, labels, and placeholders. Database tables are optimized with separate language columns (e.g., 'NameHe' and 'NameEn', 'ValueNameHe' and 'ValueNameEn') ensuring clean, searchable local and international product registries.</p></div>
+    </div>
+    <hr>
+    <div id="sec-3">
+      <h3>פרק 3: Database Documentation</h3>
+      <div><p>The system's structural integrity is maintained via a highly relational schema. Below is the full description of all 8 database tables.</p><p><h4>3.1 Relational Schema Matrix</h4></p><p>#<h4>1. AttributeTypes (סוגי מאפיינים)</h4></p><p><ul><li><strong>Purpose</strong>:  Defines master categories of physical modifiers (e.g., Size [מידה], Color [צבע]).</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'AttributeTypeId' (Identity, INT)</li></ul></p><p><ul><li><strong>Unique Constraints</strong>:  'TypeNameEn', 'TypeNameHe' (No duplicate master categories allowed)</li></ul></p><p><ul><li><strong>Indices</strong>:  'IX_AttributeTypes_Active_Deleted' (covering IsActive, IsDeleted)</li></ul></p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'IsActive' (BOOLEAN, default: TRUE): Controls whether this category can be matched to new items.</p><p>  - 'IsDeleted' (BOOLEAN, default: FALSE): Supports soft-deletes to protect transactional history.</p><p>#<h4>2. AttributeValues (ערכי מאפיינים)</h4></p><p><ul><li><strong>Purpose</strong>:  Defines whitelisted choices under each master category (e.g., S, M, L, XL for Size).</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'AttributeValueId' (Identity, INT)</li></ul></p><p><ul><li><strong>Foreign Key</strong>:  'AttributeTypeId' -> 'AttributeTypes(AttributeTypeId)' (Cascades ON DELETE)</li></ul></p><p><ul><li><strong>Unique Constraints</strong>:  'UQ_AttributeValue_Type_Name' ('AttributeTypeId' + 'ValueNameHe')</li></ul></p><p><ul><li><strong>Indices</strong>:  'IX_AttributeValues_TypeId_Active'</li></ul></p><p>#<h4>3. WarehouseItems (קטלוג פריטים)</h4></p><p><ul><li><strong>Purpose</strong>:  The core agricultural inventory ledger.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'SKU' (VARCHAR(50), matches physical product codes / Makat).</li></ul></p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'NameHe' / 'NameEn' (VARCHAR(200)): Dual-language names.</p><p>  - 'Stock' (INT, default: 0): Real physical quantity available.</p><p>  - 'Price' (DECIMAL(18,2)): Valuations in NIS.</p><p>  - 'Shelf' (VARCHAR(50)): Warehouse storage location.</p><p>  - 'CategoryHe' / 'CategoryEn': Product categories.</p><p>#<h4>4. ItemPictureUrls (תמונות וגלריה לפריטים)</h4></p><p><ul><li><strong>Purpose</strong>:  Tracks visual attachments for catalog products.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'PictureId' (VARCHAR(100))</li></ul></p><p><ul><li><strong>Foreign Key</strong>:  'SKU' -> 'WarehouseItems(SKU)' (Cascades ON DELETE)</li></ul></p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'ImageUrl' (TEXT): Public asset address.</p><p>  - 'IsPrimary' (BOOLEAN): Denotes main catalog display picture.</p><p>#<h4>5. ItemAttributeMapping (שיוך מאפיינים למק"ט)</h4></p><p><ul><li><strong>Purpose</strong>:  Links physical modifiers requirements to a specific SKU.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  Composite: '[SKU, AttributeTypeId]'</li></ul></p><p><ul><li><strong>Foreign Keys</strong>: </li></ul></p><p>  - 'SKU' -> 'WarehouseItems(SKU)' (Cascades ON DELETE)</p><p>  - 'AttributeTypeId' -> 'AttributeTypes(AttributeTypeId)'</p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'IsMandatory' (BOOLEAN, default: FALSE): Enforces selections on request forms.</p><p>#<h4>6. ItemAttributeAllowedValues (ערכים מורשים לפריט)</h4></p><p><ul><li><strong>Purpose</strong>:  Restricts the global attribute value list to a subset allowed for a particular SKU.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  Composite: '[SKU, AttributeTypeId, AttributeValueId]'</li></ul></p><p><ul><li><strong>Foreign Keys</strong>: </li></ul></p><p>  - '[SKU, AttributeTypeId]' -> 'ItemAttributeMapping(SKU, AttributeTypeId)' (Cascades ON DELETE)</p><p>  - 'AttributeValueId' -> 'AttributeValues(AttributeValueId)'</p><p>#<h4>7. WarehouseRequests (הזמנות ובקשות)</h4></p><p><ul><li><strong>Purpose</strong>:  Requisitions submitted by researchers and staff.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  Composite: '[RequestId, SKU]' (supports multiple items in a single request transaction)</li></ul></p><p><ul><li><strong>Foreign Keys</strong>: </li></ul></p><p>  - 'SKU' -> 'WarehouseItems(SKU)'</p><p>  - 'AttributeTypeId' -> 'AttributeTypes(AttributeTypeId)'</p><p>  - 'AttributeValueId' -> 'AttributeValues(AttributeValueId)'</p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'QuantityRequested' (INT): Selected checkout amount.</p><p>  - 'StatusHe' / 'StatusEn': Status codes (e.g., "PENDING" / "APPROVED" / "DISPATCHED").</p><p>#<h4>8. NipukRecords (יומן ניפוקים פיזי)</h4></p><p><ul><li><strong>Purpose</strong>:  Physical dispatch audits matching packed shipments.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'NipukId' (VARCHAR(50))</li></ul></p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'WorkerId' / 'WorkerName': Identity of the storekeeper.</p><p>  - 'CustomerName' / 'CustomerId': Identity of the receiving researcher.</p><p>  - 'Quantity' (INT): Actual physical volume handed over.</p><p>  - 'DispatchDate' / 'DispatchTime': Actual checkout timestamps.</p><p>#<h4>9. FinancialRateCache (מטמון שערי מטבע)</h4></p><p><ul><li><strong>Purpose</strong>:  Stores daily currency listings to optimize computation times.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'CacheId' (Identity, INT)</li></ul></p><p><ul><li><strong>Unique Constraint</strong>:  'RateDate' + 'CurrencyCode'</li></ul></p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'ExchangeRate' (DECIMAL(18,6)): Rate compared to ILS.</p><p>  - 'TrendPercent' (DECIMAL(12,4)): Daily shift direction.</p><p>#<h4>10. AuditLog (יומן אבטחה וביקורת)</h4></p><p><ul><li><strong>Purpose</strong>:  Immutable security registry tracking critical data modifications.</li></ul></p><p><ul><li><strong>Primary Key</strong>:  'AuditLogId' (Identity, BIGINT)</li></ul></p><p><ul><li><strong>Important Columns</strong>: </li></ul></p><p>  - 'UserId' (VARCHAR(100)): Workstation or user identity.</p><p>  - 'ActionType' (VARCHAR(50)): CREATE, UPDATE, DELETE, ASSIGN.</p><p>  - 'OldValue' / 'NewValue' (TEXT/JSON): Serialized field representations for compliance.</p><p><h4>3.2 Data Connection</h4></p><p>The application uses **Supabase** as its primary cloud database and backend service. All application data is stored, authenticated, and managed securely through the Supabase cloud layer.</p><p>#<h4>Online Database Access</h4></p><p>Every database operation is performed strictly **online**. The application does **not** support a local database, offline cache as the primary data source, or embedded storage for business records. </p><p>All core operations, including but not limited to:</p><p>- Reading inventory and catalog listings</p><p>- Creating new checkout requests</p><p>- Updating request statuses and physical stocks</p><p>- Deleting or soft-deleting database records</p><p>- Real-time authentication and user profile registrations</p><p>are executed through live, direct requests to the Supabase backend.</p><p>This design ensures that:</p><p><ul><li><strong>Centralized Source of Truth</strong>:  There is **no local database** used as the authoritative source of truth. Every user workstation operates directly with the cloud database.</li></ul></p><p><ul><li><strong>Real-time Synchronization</strong>:  All active users across multiple workstations always access and work with the same synchronized, real-time cloud data, preventing inventory discrepancies.</li></ul></p><p><ul><li><strong>Integrated Security</strong>:  User identities, credentials, and access control rights are directly managed and enforced on Supabase.</li></ul></p><p><ul><li><strong>Resiliency</strong>:  The system requires a live connection to execute any operations.</li></ul></p><p>#<h4>Architecture Summary Table</h4></p><p><ul><li><strong>Database Provider</strong>:  Supabase</li></ul></p><p><ul><li><strong>Connection Type</strong>:  Online (Cloud)</li></ul></p><p><ul><li><strong>Data Source</strong>:  Live Supabase Database</li></ul></p><p><ul><li><strong>Database Operations</strong>:  100% Online (CRUD & Auth)</li></ul></p><p><ul><li><strong>Local Database</strong>:  Not Used (None)</li></ul></p><p><ul><li><strong>Offline Mode</strong>:  Not Supported (Real-time connection is mandatory for production use)</li></ul></p></div>
+    </div>
+    <hr>
+    <div id="sec-4">
+      <h3>פרק 4: Solution & Code Structure</h3>
+      <div><p><h4>4.1 Solution Layout Overview</h4></p><p>The repository maintains a clean, modular structure. Below are the core folder and file responsibilities:</p><p><ul><li><strong>Root Directory ('/')</strong>: </li></ul></p><p>  - 'Web.config': Core configurations for IIS, connection strings, FormAuthentication, and .NET runtime controls.</p><p>  - 'server.ts': Express 4 startup service, mounting API routers, XML currency proxy, and Vite production static routes.</p><p>  - 'vite.config.ts': Bundler configurations compiling SPA React outputs.</p><p>  - 'package.json': Operational scripts, dependencies (React 19, Express 4, Supabase-JS, Docx, PDFKit, Tailwind CSS), and compiler configurations.</p><p>  - 'Schema_and_Procedures.sql': Legacy SQL Server definitions.</p><p>  - 'Supabase_Schema_and_Procedures.sql': Supabase PostgreSQL definitions.</p><p><ul><li><strong>Source Code Directory ('/src')</strong>: </li></ul></p><p>  - 'App.tsx': Unified application shell containing global state controllers, authentication check-outs, responsive tab engines, and event synchronizers.</p><p>  - 'types.ts': Strict TypeScript typings for all core entities (WarehouseItem, AppUser, AttributeType, NipukRecord, etc.).</p><p>  - 'main.tsx': High-level entry point mounting React 19 to the index.html viewport.</p><p>  - 'index.css': Central CSS layout importing Tailwind CSS 4 utilities and loading external custom fonts (Inter, Space Grotesk, and JetBrains Mono).</p><p><ul><li><strong>Components Directory ('/src/components')</strong>: </li></ul></p><p>  - 'EnterpriseLayout.tsx': Primary structural frame. Computes active menus, handles header notifications, displays current language toggles, and tracks connection statuses.</p><p>  - 'RequestForm.tsx': Responsive checkout sheet with intelligent attribute bindings and live validations.</p><p>  - 'AttributesManagement.tsx': Administrative master controls to create/delete attribute types and values.</p><p>  - 'ItemMappingForm.tsx': Grid interface linking physical attribute categories and white-listed values to specific item SKUs.</p><p>  - 'CatalogManagementForm.tsx': Grid and card explorer for catalog items. Includes image galleries, filters, and inventory modifications.</p><p>  - 'DispatchManagement.tsx': Workspace for storekeepers to inspect requests, change status, and dispatch items (Nipuk).</p><p>  - 'DispatchManagement.tsx' (cont.): Generates instant delivery handovers.</p><p>  - 'UserManagement.tsx': Control dashboard to authorize users, edit contact info, and toggle active states.</p><p>  - 'AdminDataExporter.tsx': Grid view allowing full auditing of security logs, exports to CSV, and database inspections.</p><p>  - 'CSVImportManager.tsx': CSV file parsing engine allowing rapid spreadsheet uploads into the warehouse.</p><p>  - 'FinancialDataViewer.tsx': Foreign exchange trends dashboard, fetching Bank of Israel data and rendering responsive analytical reports.</p><p>  - 'AuthScreen.tsx': Secure authorization card supporting login with Teudat Zehut credentials and new registration controls.</p><p>  - 'ArchitectHub.tsx': Technical database specifications, visual ERD trees, and legacy .NET code archives.</p><p><ul><li><strong>Services Directory ('/src/services')</strong>: </li></ul></p><p>  - 'dbService.ts': Direct mapper and sync manager for Supabase database tables.</p></div>
+    </div>
+    <hr>
+    <div id="sec-5">
+      <h3>פרק 5: Business Logic & Request Lifecycle</h3>
+      <div><p>The system guarantees logistical consistency by enforcing strict business flows across multiple logical operations.</p><p><h4>5.1 Requisition Submission Lifecycle</h4></p><p><ul><li><strong>Selection</strong>:  A Staff member navigates to the Request Sheet and selects an item. The system queries 'ItemAttributeMapping' and 'ItemAttributeAllowedValues' to identify if there are any mandatory modifiers.</li></ul></p><p><ul><li><strong>Dynamic Validation</strong>:  If an attribute is marked as mandatory (IsMandatory = 1), the "Add Request" action remains locked until the user chooses a valid option from the dynamically-loaded whitelisted values.</li></ul></p><p><ul><li><strong>Submission</strong>:  Upon submission, a request is recorded in 'WarehouseRequests' with a unique ID format (e.g. 'WR-2026-XXXX') and its state is initialized to "Pending Approval" (ממתין לאישור).</li></ul></p><p><ul><li><strong>Audit Registration</strong>:  An atomic action logs the creation event in the 'AuditLog' table, recording the author's ID, the affected item, and the timestamp.</li></ul></p><p><h4>5.2 Approval & Physical Dispatch (Nipuk - ניפוק)</h4></p><p><ul><li><strong>Verification</strong>:  Storekeepers and Managers monitor the Dispatch Workspace. They review pending requests, check current inventory levels, and match item SKU shelves.</li></ul></p><p><ul><li><strong>State Transition</strong>:  The Storekeeper can change the request status to "Approved" (אושר) or "Rejected" (נדחה).</li></ul></p><p><ul><li><strong>Dispatch Operation (Nipuk)</strong>:  To complete a dispatch, the Storekeeper inputs the actual dispatched quantity, logs notes/remarks, and specifies the receiver's name, ID (Teudat Zehut), and contact number.</li></ul></p><p><ul><li><strong>Stock Mutation</strong>:  Executing the dispatch triggers a subtraction from the item's physical inventory stock in the 'WarehouseItems' table.</li></ul></p><p><ul><li><strong>Nipuk Log Archive</strong>:  A physical shipping log is generated in the 'NipukRecords' table, capturing the dispatcher's credentials and the receiver's details.</li></ul></p><p><h4>5.3 Currency Exchange Integration</h4></p><p><ul><li><strong>Fetch Flow</strong>:  The application queries the daily XML feed from the Bank of Israel (https://www.boi.org.il/en/financial-markets/foreign-exchange-rates/).</li></ul></p><p><ul><li><strong>Cache Verification</strong>:  To bypass network latency, the system first checks the local 'FinancialRateCache'. If a rate exists for the current date, it serves it directly.</li></ul></p><p><ul><li><strong>Conversion Engine</strong>:  Inventory prices (stored in ILS) can be converted into USD, EUR, GBP, CAD, JPY, or RUB based on the cached rates, providing real-time financial reporting for researchers and administrators.</li></ul></p></div>
+    </div>
+    <hr>
+    <div id="sec-6">
+      <h3>פרק 6: Authentication & Security</h3>
+      <div><p><h4>6.1 Authentication Mechanism</h4></p><p>The system utilizes a secure, dual-layer authorization model.</p><p><ul><li><strong>Legacy Stack</strong>:  FormAuthentication is configured in 'Web.config' under the '<authentication mode="Forms">' tag, pointing to a secure 'Login.aspx' page. Relational roles are managed via 'SqlRoleProvider'.</li></ul></p><p><ul><li><strong>Modernized Stack</strong>:  Client-side authentication is enforced in the React shell. Users authenticate using their Teudat Zehut (Israeli ID number, exactly 9 digits) as their username and a hashed password.</li></ul></p><p><h4>6.2 Roles and Authorization Matrix</h4></p><p>The system supports four distinct roles:</p><p><ul><li><strong>ADMIN</strong>:  Full access to all components, including User Management, Database Audit Logs, Data Exporters, and CSV Imports.</li></ul></p><p><ul><li><strong>MANAGER</strong>:  Can manage master attribute mappings, catalog entries, CSV imports, and dispatch request sheets.</li></ul></p><p><ul><li><strong>STOREKEEPER</strong>:  Specifically authorized to browse catalog items, update shelf locations, process pending requests, and log physical dispatches (Nipuk).</li></ul></p><p><ul><li><strong>STAFF</strong>:  Restricted role for agricultural researchers. They can browse items and submit requests, but are blocked from administrative tabs (such as mapping, user management, and audit logs).</li></ul></p><p><h4>6.3 Security Defenses</h4></p><p><ul><li><strong>SQL Injection Prevention</strong>:  All direct SQL queries utilize parameterized parameters. No dynamic string concatenation is allowed for queries.</li></ul></p><p><ul><li><strong>Row-Level Security (RLS)</strong>:  PostgreSQL tables in Supabase have RLS policies configured, ensuring that staff users can only view or write their own requests.</li></ul></p><p><ul><li><strong>XSS Protection</strong>:  All user-input content rendered in the React interface is automatically sanitized by React's native string rendering, which escapes HTML tags.</li></ul></p><p><ul><li><strong>Audit Auditing</strong>:  Every write action (Create, Update, Delete, Assign) generates an immutable log in the 'AuditLog' table, documenting the old value, new value, and operator details.</li></ul></p></div>
+    </div>
+    <hr>
+    <div id="sec-7">
+      <h3>פרק 7: User Manual - End User Guide</h3>
+      <div><p><h4>7.1 How to Log In</h4></p><p>1. Open the application. You will be greeted by the secure **Auth Screen (כניסת משתמשים)**.</p><p>2. Enter your **Teudat Zehut (תעודת זהות)** (must be exactly 9 digits).</p><p>3. Enter your secure password.</p><p>4. Click **Sign In (התחבר)**.</p><p>5. If you do not have an account, click **Register (הרשמה)** to create one, which will be pending administrator activation.</p><p><h4>7.2 Creating a Warehouse Request</h4></p><p>1. Click on the **Request Sheet (טופס הגשת בקשה)** tab in the main navigation menu.</p><p>2. Search or select your required item from the catalog dropdown.</p><p>3. Observe the item's current stock and unit price.</p><p>4. If the item has mandatory attributes (e.g. Size or Color), the system will display a dropdown of whitelisted choices. Choose your preferred value.</p><p>5. Enter the desired **Quantity (כמות מבוקשת)**. The system will prevent you from requesting a quantity that exceeds the active stock.</p><p>6. Click **Add Item to Sheet (הוסף לפריטים)**.</p><p>7. Click **Submit Requisition (שלח בקשה למלאי)** to submit the request.</p><p><h4>7.3 Searching the Catalog</h4></p><p>1. Click on the **Catalog (קטלוג פריטים)** tab.</p><p>2. Use the search bar to filter items by SKU or Name.</p><p>3. Click on any item to view its detailed specifications, including its shelf location, price, and category.</p><p>4. If multiple images are available, you can cycle through them using the product carousel.</p></div>
+    </div>
+    <hr>
+    <div id="sec-8">
+      <h3>פרק 8: User Manual - Administrator Guide</h3>
+      <div><p><h4>8.1 User Administration</h4></p><p>1. Log in as an **ADMIN**.</p><p>2. Navigate to the **User Management (ניהול משתמשים)** tab.</p><p>3. You will see a complete grid of all system users.</p><p>4. To activate or deactivate a user, click the **Toggle Active (פעיל/לא פעיל)** button.</p><p>5. To change a user's role (ADMIN, MANAGER, STOREKEEPER, STAFF), select the role from the dropdown menu and click save.</p><p>6. To add a new user manually, click **Create User** and fill in the required fields.</p><p><h4>8.2 Audit Logs & Data Export</h4></p><p>1. Log in as an **ADMIN**.</p><p>2. Navigate to the **Export Data (ייצוא נתונים)** tab.</p><p>3. Under the **Audit Logs (יומן מעקב)** section, you can view a detailed audit trail of all database mutations.</p><p>4. Filter logs by Date, Action Type (CREATE, UPDATE, DELETE), or User.</p><p>5. Click **Export to CSV** or **Export to JSON** to download a local copy of the logs or database tables.</p><p><h4>8.3 CSV and Catalog Synchronization</h4></p><p>1. Navigate to the **CSV Import (ייבוא נתונים)** tab.</p><p>2. Select your catalog CSV spreadsheet. The file must match the required template column structure (SKU, NameHe, NameEn, Stock, Price, Shelf).</p><p>3. Click **Upload and Validate**.</p><p>4. Review any potential validation warnings (e.g., duplicate SKUs or missing prices).</p><p>5. Click **Commit to Cloud** to synchronize the items with the Supabase database.</p></div>
+    </div>
+    <hr>
+    <div id="sec-9">
+      <h3>פרק 9: Troubleshooting & Support</h3>
+      <div><p><h4>9.1 Common Error Messages</h4></p><p><ul><li><strong>"Database Connection Failed"</strong>:  This occurs when the application cannot reach the Supabase cloud cluster. Because all database operations are performed 100% online, verify your internet connection. No local database or offline cache is used as a source of truth for business data, so a live connection is required for all read, write, and authentication flows.</li></ul></p><p><ul><li><strong>"Quantity requested exceeds stock limit"</strong>:  You have entered a checkout amount larger than the item's current stock level. Lower your quantity.</li></ul></p><p><ul><li><strong>"Israeli ID must be exactly 9 digits"</strong>:  The Teudat Zehut format is invalid. Double-check your entered credentials.</li></ul></p><p><h4>9.2 Support and Escalation</h4></p><p>For logistical system support, contact Svetlana Chernytsky at svetlanac@volcani.gov.il or submit a support ticket via the local agricultural ARO IT portal.</p></div>
+    </div>
+    <hr>
+    <div class="footer">
+      <p>© 2026 Volcani Center Agricultural Research Organization (ARO). כל הזכויות שמורות.</p>
+    </div>
+  </div>
+</body>
+</html>

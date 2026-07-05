@@ -1,0 +1,8 @@
+{
+  "name": "Warehouse Management System",
+  "description": "Warehouse request sheets and item attributes management for Volcani Research.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

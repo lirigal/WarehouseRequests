@@ -1,0 +1,186 @@
+AttributeType_NameHe,AttributeType_NameEn,AttributeType_IsActive,Value_He,Value_En,Value_IsActive
+"מידות XS-XXL","Sizes XS-XXL",true,"XS","XS",true
+"מידות XS-XXL","Sizes XS-XXL",true,"M","M",true
+"מידות XS-XXL","Sizes XS-XXL",true,"L","L",true
+"מידות XS-XXL","Sizes XS-XXL",true,"S","S",true
+"מידות XS-XXL","Sizes XS-XXL",true,"XL","XL",true
+"מידות XS-XXL","Sizes XS-XXL",true,"XXL","XXL",true
+"מידות XS-XXL","Sizes XS-XXL",true,"XXXL","XXXL",true
+"צבע","Color",true,"צהוב","Yellow",true
+"צבע","Color",true,"ירוק","Green",true
+"צבע","Color",true,"חום","Brown",true
+"צבע","Color",true,"סגול","Purple",true
+"צבע","Color",true,"אפור","Gray",true
+"צבע","Color",true,"כחול","Blue",true
+"צבע","Color",true,"שחור","Black",true
+"צבע","Color",true,"אדום","Red",true
+"צבע","Color",true,"ורוד","Pink",true
+"צבע","Color",true,"לבן","White",true
+"צבע","Color",true,"כתום","Orange",true
+"כפפות עבודה","Work Gloves",true,"סיגנט","Signet",true
+"כפפות עבודה","Work Gloves",true,"כפפות עבות","Heavy Duty Gloves",true
+"כפפות עבודה","Work Gloves",true,"כפפות עבודה כבדות","Heavy Duty Gloves",true
+"מאמ""ת חד פאזי","Single-Phase Circuit Breaker",true,"1X10","1X10",true
+"מאמ""ת חד פאזי","Single-Phase Circuit Breaker",true,"1X20","1X20",true
+"מאמ""ת חד פאזי","Single-Phase Circuit Breaker",true,"1X16","1X16",true
+"מאמ""ת חד פאזי","Single-Phase Circuit Breaker",true,"1X25","1X25",true
+"מאמ""ת חד פאזי","Single-Phase Circuit Breaker",true,"1X32","1X32",true
+"אזיקונים לקשירה","Cable Ties",true,"10 ס""מ","10cm",true
+"אזיקונים לקשירה","Cable Ties",true,"20 ס""מ","20 cm",true
+"אזיקונים לקשירה","Cable Ties",true,"ס""מ 30","cm 30",true
+"ברז PVC","PVC Valve",true,"1/2","1/2",true
+"ברז PVC","PVC Valve",true,"3/4","3/4",true
+"ברז גן","Garden Faucet",true,"1/2","1/2",true
+"ברז גן","Garden Faucet",true,"3/4","3/4",true
+"ברז מעבר","Adapter Valve",true,"1.5","1.5",true
+"ברז מעבר","Adapter Valve",true,"2","2",true
+"ברז מעבר","Adapter Valve",true,"1/2","1/2",true
+"ברז מעבר","Adapter Valve",true,"3/4","3/4",true
+"זוית פלסטיק","Plastic Elbow",true,"1/2","1/2",true
+"זוית פלסטיק","Plastic Elbow",true,"3/4","3/4",true
+"זוית פלסטיק","Plastic Elbow",true,"1","1",true
+"זוית פלסטיק 16","Plastic Elbow 16",true,"16-16","16-16",true
+"זוית פלסטיק 16","Plastic Elbow 16",true,"פנים 16-""3/4","16-3/4"" Male",true
+"זוית פלסטיק 20","Plastic Elbow 20",true,"20-20","20-20",true
+"זוית פלסטיק 20","Plastic Elbow 20",true,"פנים 20-""3/4","20-3/4"" Male",true
+"זוית פלסטיק 20","Plastic Elbow 20",true,"חוץ 20-3/4","20-3/4""  Female",true
+"זוית פלסטיק 25","Plastic Elbow 25",true,"25-25","25-25",true
+"זוית פלסטיק 25","Plastic Elbow 25",true,"25-3/4"" פנים","25-3/4"" Male",true
+"זוית פלסטיק 25","Plastic Elbow 25",true,"25-""3/4 חוץ","25-""3/4 Female",true
+"טונר למדפסת שחור","Black Printer Toner",true,"SAMSUNG SCX-5835","SAMSUNG SCX-5835",true
+"טונר למדפסת שחור","Black Printer Toner",true,"SAMSUNG  CLX-6260","SAMSUNG ֺCLX-6260",true
+"טונר למדפסת שחור","Black Printer Toner",true,"SAMSUNG M3870","SAMSUNG M3870",true
+"טונר למדפסת שחור","Black Printer Toner",true,"SAMSUNG CLX-6260","SAMSUNG CLX-6260",true
+"טי מתכת מגלוון","Galvanized Metal Tee",true,"1/2","1/2",true
+"טי מתכת מגלוון","Galvanized Metal Tee",true,"3/4","3/4",true
+"טי מתכת מגלוון","Galvanized Metal Tee",true,"1","1",true
+"טי פלסטיק","Plastic Tee",true,"1/2","1/2",true
+"טי פלסטיק","Plastic Tee",true,"3/4","3/4",true
+"טי פלסטיק","Plastic Tee",true,"1","1",true
+"טי פלסטיק 16","Plastic Tee 16",true,"16-16-16","16-16-16",true
+"טי פלסטיק 16","Plastic Tee 16",true,"16-16-3/4 זכר","16-16-3/4 Male",true
+"טי פלסטיק 16","Plastic Tee 16",true,"16-16-3/4 נקבה","16-16-3/4 Female",true
+"טי פלסטיק 20","Plastic Tee 20",true,"20-20-20","20-20-20",true
+"טי פלסטיק 20","Plastic Tee 20",true,"20-20-3/4 זכר","20-20-3/4 Male",true
+"טי פלסטיק 20","Plastic Tee 20",true,"20-20-3/4 נקבה","20-20-3/4 Female",true
+"טי פלסטיק 25","Plastic Tee 25",true,"25-25-25","25-25-25",true
+"טי פלסטיק 25","Plastic Tee 25",true,"25-25-3/4 זכר","25-25-3/4 Male",true
+"טי פלסטיק 25","Plastic Tee 25",true,"25-25-3/4 נקבה","25-25-3/4 Female",true
+"טי פלסטיק 25","Plastic Tee 25",true,"25-25-3/4 פנים","25-25-3/4",false
+"טי שן","Barbed Tee",true,"16","16",true
+"טי שן","Barbed Tee",true,"20","20",true
+"ידית סקלפל","Scalpel Handle",true,"3","3",true
+"ידית סקלפל","Scalpel Handle",true,"4","4",true
+"להב סקלפל","Scalpel Blade",true,"10","10",true
+"להב סקלפל","Scalpel Blade",true,"11","11",true
+"להב סקלפל","Scalpel Blade",true,"12","12",true
+"להב סקלפל","Scalpel Blade",true,"20","20",true
+"להב סקלפל","Scalpel Blade",true,"21","21",true
+"להב סקלפל","Scalpel Blade",true,"22","22",true
+"מאמ""ת תלת פאזי","Three-Phase Circuit Breaker",true,"3X10","3X10",true
+"מאמ""ת תלת פאזי","Three-Phase Circuit Breaker",true,"3X16","3X16",true
+"מאמ""ת תלת פאזי","Three-Phase Circuit Breaker",true,"3X20","3X20",true
+"מאמ""ת תלת פאזי","Three-Phase Circuit Breaker",true,"3X25","3X25",true
+"מאמ""ת תלת פאזי","Three-Phase Circuit Breaker",true,"3X32","3X32",true
+"מאמ""ת תלת פאזי","Three-Phase Circuit Breaker",true,"3X40","3X40",true
+"מחבר פלסאון 25","Plasson Connector 25",true,"זכר 25-3/4","זכר 25-3/4",true
+"מחבר פלסאון 25","Plasson Connector 25",true,"נקבה 25-3/4","נקבה 25-3/4",true
+"מחבר פלסאון 25","Plasson Connector 25",true,"זכר 25-1","זכר 25-1",true
+"מחבר פלסאון 25","Plasson Connector 25",true,"נקבה 25-1","נקבה 25-1",true
+"מחבר פלסטיק 16","Plastic Connector 16",true,"16-16","16-16",true
+"מחבר פלסטיק 16","Plastic Connector 16",true,"16-3/4 נקבה","16-3/4 Female",true
+"מחבר פלסטיק 16","Plastic Connector 16",true,"16-3/4 זכר","16-3/4 Male",true
+"מחבר פלסטיק 20","Plastic Connector 20",true,"20-20","20-20",true
+"מחבר פלסטיק 20","Plastic Connector 20",true,"20-3/4 נקבה","20-3/4 Female",true
+"מחבר פלסטיק 20","Plastic Connector 20",true,"20-3/4 זכר","20-3/4 Male",true
+"מחבר פלסטיק 25","Plastic Connector 25",true,"25-25","25-25",true
+"מחבר פלסטיק 25","Plastic Connector 25",true,"25-3/4 נקבה","25-3/4 Female",true
+"מחבר פלסטיק 25","Plastic Connector 25",true,"25-3/4 זכר","25-3/4 Male",true
+"מחבר שן","Barbed Connector",true,"16","16",true
+"מחבר שן","Barbed Connector",true,"20","20",true
+"מפצל חשמל","Power Strip",true,"שני שקעים","2 Sockets",true
+"מפצל חשמל","Power Strip",true,"שלושה שקעים","3 Sockets",true
+"מפצל חשמל","Power Strip",true,"2 שקעים","2 Sockets",true
+"מפצל חשמל","Power Strip",true,"3 שקעים","3 Sockets",true
+"מפצל רב כח עם כבל","Power Strip with Cable",true,"ארבעה שקעים","4 Sockets",true
+"מפצל רב כח עם כבל","Power Strip with Cable",true,"שישה שקעים","6 Sockets",true
+"ניפל מתכת","Metal Nipple",true,"1/2","1/2",true
+"ניפל מתכת","Metal Nipple",true,"3/4","3/4",true
+"ניפל מתכת","Metal Nipple",true,"1","1",true
+"ניפל מתכת","Metal Nipple",true,"1.5","1.5",true
+"ניפל מתכת","Metal Nipple",true,"2","2",false
+"ניפל פלסטיק","Plastic Nipple",true,"1/2","1/2",true
+"ניפל פלסטיק","Plastic Nipple",true,"3/4","3/4",true
+"ניפל פלסטיק","Plastic Nipple",true,"1","1",true
+"סופית לצינור השקייה","Irrigation Pipe End Cap",true,"16","16",true
+"סופית לצינור השקייה","Irrigation Pipe End Cap",true,"20","20",true
+"פילטר סביבון","Spin Filter",true,"0.22","0.22",true
+"פילטר סביבון","Spin Filter",true,"0.45","0.45",true
+"פיתיון לנמלים ותיקנים","Ant and Cockroach Bait",true,"נמלים","Ants",true
+"פיתיון לנמלים ותיקנים","Ant and Cockroach Bait",true,"תיקנים","Cockroaches",true
+"פקק","Plug",true,"1/2","1/2",true
+"פקק","Plug",true,"3/4","3/4",true
+"פקק","Plug",true,"1","1",true
+"פקק","Plug",true,"2","2",true
+"סוללות","Batteries",true,"AA","AA",true
+"סוללות","Batteries",true,"AAA","AAA",true
+"מאמת חד פזי","Single-Phase Circuit Breaker",true,"1X10","1X10",true
+"מאמת חד פזי","Single-Phase Circuit Breaker",true,"1X20","1X20",true
+"מאמת חד פזי","Single-Phase Circuit Breaker",true,"1/16","1x16",true
+"מאמת חד פזי","Single-Phase Circuit Breaker",true,"1x25","1x25",true
+"מאמת חד פזי","Single-Phase Circuit Breaker",true,"1x32","1x32",true
+"שסתום PVC","PVC Valve",true,"1/2","1/2",true
+"שסתום PVC","PVC Valve",true,"3/4","3/4",true
+"ברז מתאם","Adapter Valve",true,"1.5","1.5",true
+"ברז מתאם","Adapter Valve",true,"2","2",true
+"ברז מתאם","Adapter Valve",true,"1/2","1/2",true
+"ברז מתאם","Adapter Valve",true,"3/4","3/4",true
+"זווית מתכת","Metal Elbow",true,"1/2","1/2",true
+"זווית מתכת","Metal Elbow",true,"3/4","3/4",true
+"זווית מתכת","Metal Elbow",true,"1","1",true
+"זווית מתכת","Metal Elbow",true,"1.5","1.5",true
+"זווית מתכת","Metal Elbow",true,"2","2",true
+"זווית שן","Barbed Elbow",true,"16","16",true
+"זווית שן","Barbed Elbow",true,"20","20",true
+"טפטפת מסועפת","Branching Dripper",true,"50 סמ","50cm",true
+"טפטפת מסועפת","Branching Dripper",true,"60 סמ","60cm",true
+"ידית סכין מנתחים","Scalpel Handle",true,"3","3",true
+"ידית סכין מנתחים","Scalpel Handle",true,"4","4",true
+"להב סקאלפל","Scalpel Blade",true,"10","10",true
+"להב סקאלפל","Scalpel Blade",true,"11","11",true
+"להב סקאלפל","Scalpel Blade",true,"12","12",true
+"להב סקאלפל","Scalpel Blade",true,"20","20",true
+"להב סקאלפל","Scalpel Blade",true,"21","21",true
+"להב סקאלפל","Scalpel Blade",true,"22","22",true
+"מאמת תלת פזי","Three-Phase Circuit Breaker",true,"3x16","3x16",true
+"מאמת תלת פזי","Three-Phase Circuit Breaker",true,"3x20","3x20",true
+"מאמת תלת פזי","Three-Phase Circuit Breaker",true,"3x25","3x25",true
+"מאמת תלת פזי","Three-Phase Circuit Breaker",true,"2x32","3x32",true
+"מאמת תלת פזי","Three-Phase Circuit Breaker",true,"3x40","3x40",true
+"מדבקות פסולת כימית","Chemical Waste Labels",true,"אתידיום ברומיד","Ethidium Bromide",true
+"מדבקות פסולת כימית","Chemical Waste Labels",true,"חומרים אורגניים","Organic Materials",true
+"מדבקות פסולת כימית","Chemical Waste Labels",true,"בסיסים","Bases",true
+"מדבקות פסולת כימית","Chemical Waste Labels",true,"חומרים אי-אורגניים","Inorganic Materials",true
+"מדבקות פסולת כימית","Chemical Waste Labels",true,"ממסים הלוגניים","Halogenated Solvents",true
+"מדבקות פסולת כימית","Chemical Waste Labels",true,"חומצות","Acids",true
+"מחבר מתכת","Metal Coupling",true,"1/2","1/2",true
+"מחבר מתכת","Metal Coupling",true,"3/4","3/4",true
+"מחבר מתכת","Metal Coupling",true,"1","1",true
+"מחבר מתכת","Metal Coupling",true,"1.5","1.5",true
+"מחבר מתכת","Metal Coupling",true,"2","2",true
+"מחבר פלסטיק","Plastic Coupling",true,"1/2","1/2",true
+"מחבר פלסטיק","Plastic Coupling",true,"3/4","3/4",true
+"מחבר פלסטיק","Plastic Coupling",true,"1","1",true
+"מפצל חשמל עם כבל","Power Strip with Cable",true,"4 שקעים","4 Sockets",true
+"מפצל חשמל עם כבל","Power Strip with Cable",true,"6 שקעים","6 Sockets",true
+"פקק קצה לצינור השקיה","Irrigation Pipe End Cap",true,"16","16",true
+"פקק קצה לצינור השקיה","Irrigation Pipe End Cap",true,"20","20",true
+"ספין פילטר","Spin Filter",true,"0.22","0.22",true
+"ספין פילטר","Spin Filter",true,"0.45","0.45",true
+"פקק הברגה","Coupling",true,"1/2","1/2",true
+"פקק הברגה","Coupling",true,"3/4","3/4",true
+"פקק הברגה","Coupling",true,"1","1",true
+"פקק הברגה","Coupling",true,"1.5","1.5",true
+"פקק הברגה","Coupling",true,"2","2",true
+"test","test",true,"אאא","aaa",true
+"test","test",true,"בבב","bbb",true
