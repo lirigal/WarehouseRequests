@@ -753,7 +753,7 @@ export const ArchitectHub: React.FC<ArchitectHubProps> = ({ currentLanguage }) =
 
               {/* Footnote */}
               <div className="mt-4 text--slate-500 font-mono text-[10px] text-slate-500">
-                Generated automatically for Volcani Center Storage Ledger and imported attributes databases.
+                Generated automatically for Enterprise Storage Ledger and imported attributes databases.
               </div>
             </div>
           </div>

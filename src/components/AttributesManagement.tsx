@@ -61,7 +61,7 @@ export const AttributesManagement: React.FC<AttributesManagementProps> = ({
   // Pagination State for Attribute Types Master Grid
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
     try {
-      const userKey = `volcani_attributes_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_attributes_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -78,7 +78,7 @@ export const AttributesManagement: React.FC<AttributesManagementProps> = ({
   // Restore pagination when user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_attributes_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_attributes_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -96,7 +96,7 @@ export const AttributesManagement: React.FC<AttributesManagementProps> = ({
   // Persist pagination on change
   useEffect(() => {
     try {
-      const userKey = `volcani_attributes_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_attributes_rows_per_page_${currentUser?.id || "guest"}`;
       localStorage.setItem(userKey, String(rowsPerPage));
     } catch (e) {}
   }, [rowsPerPage, currentUser]);
@@ -104,7 +104,7 @@ export const AttributesManagement: React.FC<AttributesManagementProps> = ({
   // Grid scroll expansion state (persisted)
   const [isGridExpanded, setIsGridExpanded] = useState<boolean>(() => {
     try {
-      const saved = localStorage.getItem("volcani_grid_scroll_mode");
+      const saved = localStorage.getItem("agri_grid_scroll_mode");
       return saved ? JSON.parse(saved) === true : false;
     } catch (e) {
       return false;
@@ -115,7 +115,7 @@ export const AttributesManagement: React.FC<AttributesManagementProps> = ({
     setIsGridExpanded(prev => {
       const nextVal = !prev;
       try {
-        localStorage.setItem("volcani_grid_scroll_mode", JSON.stringify(nextVal));
+        localStorage.setItem("agri_grid_scroll_mode", JSON.stringify(nextVal));
       } catch (e) {
         console.error("Failed to save grid scroll state", e);
       }

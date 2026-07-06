@@ -196,18 +196,18 @@ export const CSVImportManager: React.FC<CSVImportManagerProps> = ({
 
   // Database Action Logs Persistence (persistent on local storage)
   const [importLogs, setImportLogs] = useState<CSVImportLog[]>(() => {
-    const saved = memoryStore.getItem("volcani_csv_import_logs");
+    const saved = memoryStore.getItem("agri_csv_import_logs");
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    memoryStore.setItem("volcani_csv_import_logs", JSON.stringify(importLogs));
+    memoryStore.setItem("agri_csv_import_logs", JSON.stringify(importLogs));
   }, [importLogs]);
 
   // Pagination State for Historical Import Registry
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
     try {
-      const userKey = `volcani_csv_import_logs_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_csv_import_logs_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = memoryStore.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -224,7 +224,7 @@ export const CSVImportManager: React.FC<CSVImportManagerProps> = ({
   // Restore rows-per-page preference when operator user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_csv_import_logs_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_csv_import_logs_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = memoryStore.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -242,7 +242,7 @@ export const CSVImportManager: React.FC<CSVImportManagerProps> = ({
   // Persist Rows per Page preference on selection change
   useEffect(() => {
     try {
-      const userKey = `volcani_csv_import_logs_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_csv_import_logs_rows_per_page_${currentUser?.id || "guest"}`;
       memoryStore.setItem(userKey, String(rowsPerPage));
     } catch (e) {}
   }, [rowsPerPage, currentUser]);
@@ -1039,8 +1039,8 @@ export const CSVImportManager: React.FC<CSVImportManagerProps> = ({
                 isPrimary: !hasExistingPrimaryPic, // If there isn't a primary image, make this primary
                 createdDate: new Date().toISOString(),
                 updatedDate: new Date().toISOString(),
-                createdBy: currentUser.email || "system@volcani.agri.gov.il",
-                updatedBy: currentUser.email || "system@volcani.agri.gov.il",
+                createdBy: currentUser.email || "system@agri.gov.il",
+                updatedBy: currentUser.email || "system@agri.gov.il",
                 isActive: true
               });
             }
@@ -1147,11 +1147,11 @@ export const CSVImportManager: React.FC<CSVImportManagerProps> = ({
         if (selectedTable === "items") {
           if (setWarehouseItems) {
             setWarehouseItems(workingWarehouseItems);
-            memoryStore.setItem("volcani_stock", JSON.stringify(workingWarehouseItems));
+            memoryStore.setItem("agri_stock", JSON.stringify(workingWarehouseItems));
           }
           if (setItemPictureUrls) {
             setItemPictureUrls(workingPictureUrls);
-            memoryStore.setItem("volcani_item_picture_urls", JSON.stringify(workingPictureUrls));
+            memoryStore.setItem("agri_item_picture_urls", JSON.stringify(workingPictureUrls));
           }
         } else {
           setItemMappings(workingItemMappings);

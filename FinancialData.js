@@ -1,7 +1,7 @@
 /**
  * FinancialData.js - Client-Side AJAX Exchange Rates Controller
  * Consumes WebMethods inside FinancialData.aspx.cs for seamless async retrieval.
- * Project: Bank of Israel Exchange Rates View (Volcani Agricultural Research Organization)
+ * Project: Bank of Israel Exchange Rates View (Agricultural Research Organization)
  */
 
 $(document).ready(function () {

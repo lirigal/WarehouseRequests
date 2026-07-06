@@ -13,7 +13,7 @@ if (!fs.existsSync(docsDir)) {
 // DOCUMENTATION CONTENT DATA
 // ====================================================================================
 
-const docTitle = "Volcani Center Warehouse Request & Inventory System";
+const docTitle = "Agricultural Research Organization Warehouse Request & Inventory System";
 const docSub = "Enterprise Dual-Stack Technical Overview, End-User Manual & Administration Guide";
 
 const sections = [
@@ -21,7 +21,7 @@ const sections = [
     chapter: "1",
     title: "Project Overview",
     content: `### 1.1 Purpose of the Application
-The Volcani Center Warehouse Request & Inventory System (מערכת מאפייני פריטים ומלאי) is a robust, production-ready full-stack enterprise application designed to streamline agricultural research logistics, warehouse inventory control, item classification, and physical checkout request fulfillment (Nipuk - ניפוק).
+The Agricultural Research Organization Warehouse Request & Inventory System (מערכת מאפייני פריטים ומלאי) is a robust, production-ready full-stack enterprise application designed to streamline agricultural research logistics, warehouse inventory control, item classification, and physical checkout request fulfillment (Nipuk - ניפוק).
 
 Originally architected as an ASP.NET Web Forms application using MS SQL Server 2012+, the system has been migrated to a modern, highly responsive React 19 single-page application (SPA) frontend, backed by an Express 4 REST and proxy server, and connected to Supabase PostgreSQL for cloud storage. It retains backward compatibility with legacy relational designs, featuring dual-schema representations for both Microsoft SQL Server and PostgreSQL.
 
@@ -337,7 +337,7 @@ The system supports four distinct roles:
 - **"Israeli ID must be exactly 9 digits"**: The Teudat Zehut format is invalid. Double-check your entered credentials.
 
 ### 9.2 Support and Escalation
-For logistical system support, contact Svetlana Chernytsky at svetlanac@volcani.gov.il or submit a support ticket via the local agricultural ARO IT portal.`
+For logistical system support, contact Svetlana Chernytsky at svetlanac@agri.gov.il or submit a support ticket via the local agricultural ARO IT portal.`
   }
 ];
 
@@ -504,7 +504,7 @@ function generateHTML() {
 
   html += `
     <div class="footer">
-      <p>© ${new Date().getFullYear()} Volcani Center Agricultural Research Organization (ARO). כל הזכויות שמורות.</p>
+      <p>© ${new Date().getFullYear()} Agricultural Research Organization (ARO). כל הזכויות שמורות.</p>
     </div>
   </div>
 </body>

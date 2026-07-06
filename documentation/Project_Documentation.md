@@ -1,7 +1,7 @@
-# Volcani Center Warehouse Request & Inventory System
+# Agricultural Research Organization Warehouse Request & Inventory System
 ## Enterprise Dual-Stack Technical Overview, End-User Manual & Administration Guide
 
-*Generated: 7/5/2026*
+*Generated: 7/6/2026*
 
 ## Table of Contents
 1. [Chapter 1: Project Overview](#chapter-1)
@@ -20,7 +20,7 @@
 # Chapter 1: Project Overview
 
 ### 1.1 Purpose of the Application
-The Volcani Center Warehouse Request & Inventory System (מערכת מאפייני פריטים ומלאי) is a robust, production-ready full-stack enterprise application designed to streamline agricultural research logistics, warehouse inventory control, item classification, and physical checkout request fulfillment (Nipuk - ניפוק).
+The Agricultural Research Organization Warehouse Request & Inventory System (מערכת מאפייני פריטים ומלאי) is a robust, production-ready full-stack enterprise application designed to streamline agricultural research logistics, warehouse inventory control, item classification, and physical checkout request fulfillment (Nipuk - ניפוק).
 
 Originally architected as an ASP.NET Web Forms application using MS SQL Server 2012+, the system has been migrated to a modern, highly responsive React 19 single-page application (SPA) frontend, backed by an Express 4 REST and proxy server, and connected to Supabase PostgreSQL for cloud storage. It retains backward compatibility with legacy relational designs, featuring dual-schema representations for both Microsoft SQL Server and PostgreSQL.
 
@@ -352,7 +352,7 @@ The system supports four distinct roles:
 - **"Israeli ID must be exactly 9 digits"**: The Teudat Zehut format is invalid. Double-check your entered credentials.
 
 ### 9.2 Support and Escalation
-For logistical system support, contact Svetlana Chernytsky at svetlanac@volcani.gov.il or submit a support ticket via the local agricultural ARO IT portal.
+For logistical system support, contact Svetlana Chernytsky at svetlanac@agri.gov.il or submit a support ticket via the local agricultural ARO IT portal.
 
 ---
 

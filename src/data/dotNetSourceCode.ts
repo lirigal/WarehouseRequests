@@ -17,7 +17,7 @@ export const dotNetSourceCode: SourceCodeFile[] = [
     descriptionHe: "תרגום מלא, תקין ואופטימלי לכל הטבלאות, אינדקסים, מפתחות זרים, פונקציות PL/pgSQL, ומדיניות אבטחת שורות (RLS) המתאים לשימוש ישיר ב-Supabase SQL Editor.",
     descriptionEn: "Flawless and complete translated PostgreSQL schema for direct paste into Supabase SQL Editor. Fully compliant with modern Postgres standard types, PL/pgSQL routines, and Row-Level Security (RLS) policies.",
     code: `-- ====================================================================================
--- SYSTEM: Volcani Center Warehouse Request Management System
+-- SYSTEM: Agricultural Research Center Warehouse Request Management System
 -- INTEGRATION: Supabase.com / PostgreSQL Database Schema & Relationships Script
 -- DESIGNED FOR: PostgreSQL 14+ (Compatible with modern Supabase projects)
 -- CRITICAL TRANSLATION CHECKS:
@@ -536,7 +536,7 @@ TRUNCATE TABLE FinancialRateCache CASCADE;
     descriptionHe: "(שימו לב: עבור שרת SQL Server בלבד! לא להריץ ב-Supabase) סקריפטים ליצירת טבלאות מנורמלות, מפתח זר, אינדקסים ותמיכה במחיקה רכה יחד עם פרוצדורות שמורות אופטימליות.",
     descriptionEn: "(Warning: For SQL Server ONLY! Do not run in Supabase) Highly optimized SQL server MS-SQL scripts creating the normalized schema schema, indices, soft delete flags, and stored procedures for dynamic binding.",
     code: `-- =====================================================================
--- SYSTEM: Volcani Center Warehouse Request Management System
+-- SYSTEM: Agricultural Research Center Warehouse Request Management System
 -- MODULE: Item Attributes Management (מערכת מאפייני פריטים)
 -- DESIGNED BY: Senior Enterprise Architect
 -- COMPATIBILITY: SQL Server 2012+
@@ -1129,7 +1129,7 @@ namespace WarehouseRequests.Admin
     descriptionHe: "סקריפט צד לקוח המבצע קריאת AJAX אסינכרונית ל-WebMethod שיתופי בשרת בעת בחירת מק\"ט, מאחזר את המאפיינים המותרים, ומחולל DropDown דינמי בעברית/אנגלית.",
     descriptionEn: "Highly efficient jQuery Client-side component fetching applicable values on demand and applying local Hebrew/English localization dynamically.",
     code: `/**
- * Volcani Center Warehouse Request Dynamic Attribute Selector Helper Script
+ * Agricultural Research Center Warehouse Request Dynamic Attribute Selector Helper Script
  * Supports RTL formatting, dynamic AJAX binding, and mandatory client-side validations.
  */
 
@@ -2011,7 +2011,7 @@ GO`
     code: `# Integration Architecture & Live Excel upload Coexistence
 
 ## 1. Context of Excel Imports
-The Volcani Center's Warehouse Request System receives an automated or manual daily Excel sheet dump representing the live quantities and warehouse wholesale unit price data extracted from the central governmental ERP, "Merkava" (*מרכבה*).
+The Agricultural Research Center's Warehouse Request System receives an automated or manual daily Excel sheet dump representing the live quantities and warehouse wholesale unit price data extracted from the central governmental ERP, "Merkava" (*מרכבה*).
 
 The daily upload logic:
 - Reads SQL connection details.

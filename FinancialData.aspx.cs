@@ -14,7 +14,7 @@ using System.Web.UI;
 namespace WarehouseRequests
 {
     /// <summary>
-    /// FinancialData Code-Behind Block - Volcani Institute Premium Enterprise Web Forms Screen
+    /// FinancialData Code-Behind Block - Agricultural Research Organization Premium Enterprise Web Forms Screen
     /// Manages exchange rates tracking with local SQL caching, XML dynamic stream parsing, and AJAX handlers.
     /// </summary>
     public partial class FinancialData : System.Web.UI.Page

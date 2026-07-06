@@ -46,7 +46,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
   // Pagination State
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
     try {
-      const userKey = `volcani_users_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_users_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -63,7 +63,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
   // Restore pagination when user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_users_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_users_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -81,7 +81,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
   // Persist pagination on change
   useEffect(() => {
     try {
-      const userKey = `volcani_users_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_users_rows_per_page_${currentUser?.id || "guest"}`;
       localStorage.setItem(userKey, String(rowsPerPage));
     } catch (e) {}
   }, [rowsPerPage, currentUser]);
@@ -434,7 +434,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                 required
                 value={addEmail}
                 onChange={(e) => setAddEmail(e.target.value)}
-                placeholder="eg. user@volcani.agri.gov.il"
+                placeholder="eg. user@agri.gov.il"
                 className="w-full border border-slate-300 rounded p-2 bg-white outline-none focus:border-blue-600 text-left font-semibold"
               />
             </div>

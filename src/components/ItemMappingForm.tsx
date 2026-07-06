@@ -39,16 +39,16 @@ export const ItemMappingForm: React.FC<ItemMappingFormProps> = ({
 
   // SKU dedicated search state with persistence
   const [skuSearchTerm, setSkuSearchTerm] = useState<string>(() => {
-    return localStorage.getItem("volcani_item_mapping_sku_search") || "";
+    return localStorage.getItem("agri_item_mapping_sku_search") || "";
   });
 
   useEffect(() => {
-    localStorage.setItem("volcani_item_mapping_sku_search", skuSearchTerm);
+    localStorage.setItem("agri_item_mapping_sku_search", skuSearchTerm);
   }, [skuSearchTerm]);
 
   // Selection states with LocalStorage persistence to keep choices on reload
   const [selectedSku, setSelectedSku] = useState<string>(() => {
-    const saved = localStorage.getItem("volcani_item_mapping_selected_sku");
+    const saved = localStorage.getItem("agri_item_mapping_selected_sku");
     if (saved && warehouseItems.some(i => i.sku === saved)) {
       return saved;
     }
@@ -59,7 +59,7 @@ export const ItemMappingForm: React.FC<ItemMappingFormProps> = ({
   });
 
   const [activeTypeId, setActiveTypeId] = useState<string>(() => {
-    return localStorage.getItem("volcani_item_mapping_active_type_id") || "";
+    return localStorage.getItem("agri_item_mapping_active_type_id") || "";
   });
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -67,19 +67,19 @@ export const ItemMappingForm: React.FC<ItemMappingFormProps> = ({
   const selectRef = useRef<HTMLSelectElement>(null);
 
   const [attrSearchTerm, setAttrSearchTerm] = useState<string>(() => {
-    return localStorage.getItem("volcani_item_mapping_attribute_search") || "";
+    return localStorage.getItem("agri_item_mapping_attribute_search") || "";
   });
 
   useEffect(() => {
-    localStorage.setItem("volcani_item_mapping_attribute_search", attrSearchTerm);
+    localStorage.setItem("agri_item_mapping_attribute_search", attrSearchTerm);
   }, [attrSearchTerm]);
 
   useEffect(() => {
-    localStorage.setItem("volcani_item_mapping_selected_sku", selectedSku);
+    localStorage.setItem("agri_item_mapping_selected_sku", selectedSku);
   }, [selectedSku]);
 
   useEffect(() => {
-    localStorage.setItem("volcani_item_mapping_active_type_id", activeTypeId);
+    localStorage.setItem("agri_item_mapping_active_type_id", activeTypeId);
   }, [activeTypeId]);
 
   // Map settings states
@@ -168,7 +168,7 @@ export const ItemMappingForm: React.FC<ItemMappingFormProps> = ({
 
       if (assigned.length > 0) {
         // Scenario 1: SKU has one or more assigned attributes
-        const savedActiveId = localStorage.getItem("volcani_item_mapping_active_type_id");
+        const savedActiveId = localStorage.getItem("agri_item_mapping_active_type_id");
         const isSavedAssigned = assigned.some((m) => m.typeId === savedActiveId);
         
         if (savedActiveId && isSavedAssigned) {

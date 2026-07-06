@@ -1,5 +1,5 @@
 -- ====================================================================================
--- SYSTEM: Volcani Center Warehouse Request Management System
+-- SYSTEM: Agricultural Research Organization Warehouse Request Management System
 -- INTEGRATION: Supabase.com / PostgreSQL Database Schema & Relationships Script
 -- DESIGNED FOR: PostgreSQL 14+ (Compatible with modern Supabase projects)
 -- LINT REFACTOR: Standardized to lowercase snake_case for PostgreSQL best practices

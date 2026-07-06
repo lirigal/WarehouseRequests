@@ -54,7 +54,7 @@ const SEED_USERS: AppUser[] = [
     lastName: "צ'רניצקי",
     jobTitle: "מנהל מחסן מורשה",
     phone: "0529876543",
-    email: "svetlana.chr@volcani.agri.gov.il",
+    email: "svetlana.chr@agri.gov.il",
     passwordHash: "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f", // "password123"
     role: "ADMIN",
     isActive: true,
@@ -68,7 +68,7 @@ const SEED_USERS: AppUser[] = [
     lastName: "יוספוב",
     jobTitle: 'טל"ת',
     phone: "0501234567",
-    email: "miri.y@volcani.agri.gov.il",
+    email: "miri.y@agri.gov.il",
     passwordHash: "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f", // "password123"
     role: "MANAGER",
     isActive: true,
@@ -82,7 +82,7 @@ const SEED_USERS: AppUser[] = [
     lastName: "כהן",
     jobTitle: "חוקר",
     phone: "0547654321",
-    email: "dr.cohen@volcani.agri.gov.il",
+    email: "dr.cohen@agri.gov.il",
     passwordHash: "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f", // "password123"
     role: "STAFF",
     isActive: true,
@@ -96,7 +96,7 @@ const SEED_USERS: AppUser[] = [
     lastName: "וורדי",
     jobTitle: "מהנדסת",
     phone: "05411111111",
-    email: "ela.v.@volcani.agri.gov.il",
+    email: "ela.v.@agri.gov.il",
     passwordHash: "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f", // "password123"
     role: "STAFF",
     isActive: true,
@@ -108,7 +108,7 @@ const SEED_USERS: AppUser[] = [
 export default function App() {
   // Global States
   const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
-    const saved = memoryStore.getItem("volcani_language");
+    const saved = memoryStore.getItem("agri_language");
     return (saved === "HE" || saved === "EN") ? saved : "HE";
   });
 
@@ -117,7 +117,7 @@ export default function App() {
 
   // Current session user state
   const [currentUser, setCurrentUser] = useState<AppUser | null>(() => {
-    const saved = memoryStore.getItem("volcani_current_user");
+    const saved = memoryStore.getItem("agri_current_user");
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
@@ -127,7 +127,7 @@ export default function App() {
               ...parsed,
               firstName: "סבטלנה",
               lastName: "צ'רניצקי",
-              email: "svetlana.chr@volcani.agri.gov.il",
+              email: "svetlana.chr@agri.gov.il",
               role: "ADMIN"
             };
           }
@@ -136,7 +136,7 @@ export default function App() {
               ...parsed,
               firstName: "מירי",
               lastName: "יוספוב",
-              email: "miri.y@volcani.agri.gov.il",
+              email: "miri.y@agri.gov.il",
               role: "MANAGER"
             };
           }
@@ -145,7 +145,7 @@ export default function App() {
               ...parsed,
               firstName: "אלה",
               lastName: "וורדי",
-              email: "ela.v.@volcani.agri.gov.il",
+              email: "ela.v.@agri.gov.il",
               phone: "05411111111",
               jobTitle: "מהנדסת",
               role: "STAFF"
@@ -473,7 +473,7 @@ function parseInitialMappings(
 
   // Active Menu Tab state
   const [activeTab, setActiveTab] = useState<"REQUEST_SHEET" | "CATALOG" | "MAPPING" | "ATTRIBS" | "ARCHITECT_SPEC" | "FINANCIAL_DATA" | "USER_MANAGEMENT" | "DISPATCH" | "NIPUK_LOG" | "EXPORT_DATA" | "CSV_IMPORT" | "DOCS">(() => {
-    const saved = memoryStore.getItem("volcani_active_tab");
+    const saved = memoryStore.getItem("agri_active_tab");
     const allowed = ["REQUEST_SHEET", "CATALOG", "MAPPING", "ATTRIBS", "ARCHITECT_SPEC", "FINANCIAL_DATA", "USER_MANAGEMENT", "DISPATCH", "NIPUK_LOG", "EXPORT_DATA", "CSV_IMPORT", "DOCS"];
     return allowed.includes(saved || "") ? (saved as any) : "REQUEST_SHEET";
   });
@@ -570,8 +570,8 @@ function parseInitialMappings(
             isPrimary: true,
             createdDate: new Date().toISOString(),
             updatedDate: new Date().toISOString(),
-            createdBy: "system@volcani.agri.gov.il",
-            updatedBy: "system@volcani.agri.gov.il",
+            createdBy: "system@agri.gov.il",
+            updatedBy: "system@agri.gov.il",
             isActive: true
           });
         });
@@ -636,7 +636,7 @@ function parseInitialMappings(
 
   // memoryStore persistence
   useEffect(() => {
-    memoryStore.setItem("volcani_language", currentLanguage);
+    memoryStore.setItem("agri_language", currentLanguage);
   }, [currentLanguage]);
 
   // Keep users updated in Supabase (No local storage cache)
@@ -651,14 +651,14 @@ function parseInitialMappings(
   // Keep current user session saved
   useEffect(() => {
     if (currentUser) {
-      memoryStore.setItem("volcani_current_user", JSON.stringify(currentUser));
+      memoryStore.setItem("agri_current_user", JSON.stringify(currentUser));
     } else {
-      memoryStore.removeItem("volcani_current_user");
+      memoryStore.removeItem("agri_current_user");
     }
   }, [currentUser]);
 
   useEffect(() => {
-    memoryStore.setItem("volcani_active_tab", activeTab);
+    memoryStore.setItem("agri_active_tab", activeTab);
   }, [activeTab]);
 
   useEffect(() => {
@@ -718,7 +718,7 @@ function parseInitialMappings(
   ) => {
     const newEntry: AuditLogEntry = {
       id: `log-${Date.now()}`,
-      userId: currentUser ? currentUser.email : "guest@volcani.agri.gov.il",
+      userId: currentUser ? currentUser.email : "guest@agri.gov.il",
       userName: currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : "Guest User",
       actionType,
       tableName,
@@ -1242,7 +1242,7 @@ function parseInitialMappings(
       attributeValueNameHe,
       attributeValueNameEn,
       requestDate: new Date().toISOString(),
-      requestedBy: currentUser ? currentUser.email : "guest@volcani.agri.gov.il",
+      requestedBy: currentUser ? currentUser.email : "guest@agri.gov.il",
       statusHe: "ממתין לניפוק מהיר",
       statusEn: "Pending Warehouse Dispatch"
     };
@@ -1594,7 +1594,7 @@ function parseInitialMappings(
         {activeTab === "REQUEST_SHEET" && (
           <RequestForm
             currentLanguage={currentLanguage}
-            currentUserEmail={currentUser ? currentUser.email : "guest@volcani.agri.gov.il"}
+            currentUserEmail={currentUser ? currentUser.email : "guest@agri.gov.il"}
             currentUserRole={currentUser ? currentUser.role : "STAFF"}
             warehouseItems={warehouseItems}
             attributeTypes={attributeTypes}

@@ -99,7 +99,7 @@ export const RequestForm: React.FC<RequestFormProps> = ({
   // Pagination states & storage persistence
   const [pageSize, setPageSize] = useState<number>(() => {
     try {
-      const userKey = `volcani_requests_page_size_${currentUserEmail || "guest"}`;
+      const userKey = `agri_requests_page_size_${currentUserEmail || "guest"}`;
       const saved = localStorage.getItem(userKey) || localStorage.getItem("requestsPageSize");
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -118,7 +118,7 @@ export const RequestForm: React.FC<RequestFormProps> = ({
   // Automatically restore page size when user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_requests_page_size_${currentUserEmail || "guest"}`;
+      const userKey = `agri_requests_page_size_${currentUserEmail || "guest"}`;
       const saved = localStorage.getItem(userKey) || localStorage.getItem("requestsPageSize");
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -141,7 +141,7 @@ export const RequestForm: React.FC<RequestFormProps> = ({
   const handlePageSizeChange = (newSize: number) => {
     setPageSize(newSize);
     try {
-      const userKey = `volcani_requests_page_size_${currentUserEmail || "guest"}`;
+      const userKey = `agri_requests_page_size_${currentUserEmail || "guest"}`;
       localStorage.setItem(userKey, String(newSize));
       localStorage.setItem("requestsPageSize", String(newSize));
     } catch (e) {
@@ -833,11 +833,11 @@ export const RequestForm: React.FC<RequestFormProps> = ({
                       </td>
                       <td className="py-2.5 px-2 text-gray-850 font-medium leading-tight text-right">
                         <div className={`font-bold ${isIssued ? "text-black" : "text-gray-900"}`}>
-                          {req.requestedBy === "svetlana@volcani.agri.gov.il"
+                          {req.requestedBy === "svetlana@agri.gov.il"
                             ? (isRtl ? "סבטלנה (מנהלת)" : "Svetlana (Manager)")
-                            : req.requestedBy === "dr.cohen@volcani.agri.gov.il"
+                            : req.requestedBy === "dr.cohen@agri.gov.il"
                             ? (isRtl ? 'ד"ר כהן (חוקר)' : "Dr. Cohen (Staff)")
-                            : req.requestedBy === "sarah.levy@volcani.agri.gov.il"
+                            : req.requestedBy === "sarah.levy@agri.gov.il"
                             ? (isRtl ? "שרה לוי (חוקרת)" : "Sarah Levy (Staff)")
                             : req.requestedBy ? req.requestedBy.split("@")[0] : ""}
                         </div>
@@ -962,11 +962,11 @@ export const RequestForm: React.FC<RequestFormProps> = ({
                     </div>
                     <div className="text-right">
                       <strong className={`font-bold block ${isIssued ? "text-black" : "text-gray-700"}`}>
-                        {req.requestedBy === "svetlana@volcani.agri.gov.il"
+                        {req.requestedBy === "svetlana@agri.gov.il"
                           ? (isRtl ? "סבטלנה (מנהלת)" : "Svetlana (Manager)")
-                          : req.requestedBy === "dr.cohen@volcani.agri.gov.il"
+                          : req.requestedBy === "dr.cohen@agri.gov.il"
                           ? (isRtl ? 'ד"ר כהן (חוקר)' : "Dr. Cohen (Staff)")
-                          : req.requestedBy === "sarah.levy@volcani.agri.gov.il"
+                          : req.requestedBy === "sarah.levy@agri.gov.il"
                           ? (isRtl ? "שרה לוי (חוקרת)" : "Sarah Levy (Staff)")
                           : req.requestedBy ? req.requestedBy.split("@")[0] : ""}
                       </strong>

@@ -79,7 +79,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
   // Pagination State for Export Preview
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
     try {
-      const userKey = `volcani_export_preview_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_export_preview_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -96,7 +96,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
   // Restore pagination when user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_export_preview_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_export_preview_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -114,7 +114,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
   // Persist pagination on change
   useEffect(() => {
     try {
-      const userKey = `volcani_export_preview_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_export_preview_rows_per_page_${currentUser?.id || "guest"}`;
       localStorage.setItem(userKey, String(rowsPerPage));
     } catch (e) {}
   }, [rowsPerPage, currentUser]);
@@ -147,7 +147,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
   const [autoStopOnError, setAutoStopOnError] = useState<boolean>(false);
   const [hasSavedCheckpoint, setHasSavedCheckpoint] = useState<boolean>(() => {
     try {
-      const userKey = `volcani_migration_checkpoint_${currentUser?.userId || "admin"}`;
+      const userKey = `agri_migration_checkpoint_${currentUser?.userId || "admin"}`;
       return !!localStorage.getItem(userKey);
     } catch {
       return false;
@@ -644,7 +644,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
       logMessage("INFO", "Pre-flight", `Automatically determined migration table sequence: ${entityLists.map(e => e.table).join(" -> ")}`);
 
       // Check for saved checkpoint to resume migration
-      const checkpointKey = `volcani_migration_checkpoint_${currentUser?.userId || "admin"}`;
+      const checkpointKey = `agri_migration_checkpoint_${currentUser?.userId || "admin"}`;
       const savedCheckpointRaw = localStorage.getItem(checkpointKey);
       let resumeFromTable: string | null = null;
       let resumeFromRowId: string | null = null;
@@ -1203,7 +1203,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
         IsActive: t.isActive ? "TRUE" : "FALSE",
         IsDeleted: t.isDeleted ? "TRUE" : "FALSE",
         CreatedDate: "2026-06-01 08:30:00+03",
-        CreatedBy: "svetlana.chr@volcani.agri.gov.il"
+        CreatedBy: "svetlana.chr@agri.gov.il"
       });
     });
 
@@ -1224,7 +1224,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
           IsActive: v.isActive ? "TRUE" : "FALSE",
           IsDeleted: v.isDeleted ? "TRUE" : "FALSE",
           CreatedDate: "2026-06-01 09:15:00+03",
-          CreatedBy: "svetlana.chr@volcani.agri.gov.il"
+          CreatedBy: "svetlana.chr@agri.gov.il"
         });
       });
     });
@@ -1315,7 +1315,7 @@ export const AdminDataExporter: React.FC<AdminDataExporterProps> = ({
         AttributeTypeId: typeIntId,
         IsMandatory: m.isMandatory ? "TRUE" : "FALSE",
         CreatedDate: "2026-06-02 11:20:00+03",
-        CreatedBy: "svetlana.chr@volcani.agri.gov.il"
+        CreatedBy: "svetlana.chr@agri.gov.il"
       });
     });
 

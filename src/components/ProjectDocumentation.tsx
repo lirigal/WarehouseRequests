@@ -136,7 +136,7 @@ export const ProjectDocumentation: React.FC<ProjectDocumentationProps> = ({
             {/* PDF format download */}
             <a
               href="/documentation/Project_Documentation.pdf"
-              download="Volcani_System_Documentation.pdf"
+              download="Enterprise_System_Documentation.pdf"
               className="flex items-center gap-1.5 py-1.5 px-3 bg-red-950/30 hover:bg-red-900/40 text-red-300 text-xs font-semibold rounded border border-red-900/30 transition cursor-pointer select-none"
               title={isRtl ? "הורד כקובץ PDF" : "Download as PDF"}
             >
@@ -147,7 +147,7 @@ export const ProjectDocumentation: React.FC<ProjectDocumentationProps> = ({
             {/* Word format download */}
             <a
               href="/documentation/Project_Documentation.docx"
-              download="Volcani_System_Documentation.docx"
+              download="Enterprise_System_Documentation.docx"
               className="flex items-center gap-1.5 py-1.5 px-3 bg-blue-950/30 hover:bg-blue-900/40 text-blue-300 text-xs font-semibold rounded border border-blue-900/30 transition cursor-pointer select-none"
               title={isRtl ? "הורד כקובץ Word" : "Download as Word"}
             >
@@ -158,12 +158,24 @@ export const ProjectDocumentation: React.FC<ProjectDocumentationProps> = ({
             {/* Markdown format download */}
             <a
               href="/documentation/Project_Documentation.md"
-              download="Volcani_System_Documentation.md"
+              download="Enterprise_System_Documentation.md"
               className="flex items-center gap-1.5 py-1.5 px-3 bg-amber-950/20 hover:bg-amber-900/30 text-amber-300 text-xs font-semibold rounded border border-amber-950/30 transition cursor-pointer select-none"
               title={isRtl ? "הורד כקובץ Markdown" : "Download as Markdown"}
             >
               <Download className="h-3.5 w-3.5" />
               <span>Markdown</span>
+            </a>
+
+            {/* Language-Aware README.md download button */}
+            <a
+              href={isRtl ? "/README_HE.md" : "/README.md"}
+              download={isRtl ? "README_HE.md" : "README.md"}
+              className="flex items-center gap-1.5 py-1.5 px-3 bg-emerald-950/20 hover:bg-emerald-900/30 text-emerald-300 text-xs font-semibold rounded border border-emerald-950/30 transition cursor-pointer select-none"
+              title={isRtl ? "הורד קובץ README.md" : "Download README.md"}
+              id="readme-download-btn"
+            >
+              <Download className="h-3.5 w-3.5" />
+              <span>{isRtl ? "קובץ README" : "README.md"}</span>
             </a>
           </div>
         )}

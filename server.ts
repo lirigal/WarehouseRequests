@@ -689,6 +689,25 @@ Return exactly a JSON object in this format:
     });
   });
 
+  // Serve README files securely from root directory
+  app.get("/README.md", (req, res) => {
+    const docPath = path.join(process.cwd(), "README.md");
+    res.sendFile(docPath, (err) => {
+      if (err) {
+        res.status(404).send("README.md not found.");
+      }
+    });
+  });
+
+  app.get("/README_HE.md", (req, res) => {
+    const docPath = path.join(process.cwd(), "README_HE.md");
+    res.sendFile(docPath, (err) => {
+      if (err) {
+        res.status(404).send("README_HE.md not found.");
+      }
+    });
+  });
+
   // Vite development middleware or static production directory server
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

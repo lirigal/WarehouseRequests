@@ -61,8 +61,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
     registerTitle: isRtl ? "רישום פריט אנוש חדש במערכת" : "Authorized User Registration",
     welcomeTitle: isRtl ? "מערכת דרישות מחסן תפעולית" : "Agricultural Research Warehouse Request Portal",
     welcomeSubtitle: isRtl 
-      ? 'מינהל המחקר החקלאי - מרכז וולקני. גישה מאובטחת לניהול פריטי מלאי ומאפייני סופר-מק"טים.'
-      : "Agricultural Research Organization - Volcani Center. Secure console for ERP inventory control & taxonomy authorization.",
+      ? 'מינהל המחקר החקלאי. גישה מאובטחת לניהול פריטי מלאי ומאפייני סופר-מק"טים.'
+      : "Agricultural Research Organization. Secure console for ERP inventory control & taxonomy authorization.",
     tzLabel: isRtl ? "תעודת זהות (9 ספרות)" : "Teudat Zehut (exactly 9 digits)",
     tzPlaceholder: isRtl ? "הזן 9 ספרות..." : "Enter 9-digit TZ username...",
     tzHint: isRtl ? "המספר ישמש כשם המשתמש הייחודי שלך בכניסה" : "ID will serve as your unique system Username",
@@ -275,7 +275,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                   {t.welcomeTitle}
                 </h1>
                 <p className="text-xs text-slate-400 mt-1 font-sans">
-                  מינהל המחקר החקלאי - מרכז וולקני
+                  מינהל המחקר החקלאי
                 </p>
               </div>
             </div>
@@ -555,7 +555,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full text-xs border border-slate-300 rounded-lg p-2 bg-white outline-none focus:border-blue-600 text-left font-semibold"
-                      placeholder="email@volcani.agri.gov.il"
+                      placeholder="email@agri.gov.il"
                       disabled={loading}
                     />
                   </div>
@@ -719,7 +719,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({
 
       {/* Footer copyright block */}
       <div className="text-center text-slate-400 text-[10px] font-mono select-none mt-6">
-        SQL_SERVER: dbo.Users | TRANSACTION_ISOLATION_LEVEL: READ_COMMITTED | VOLCANI_RESEARCH_ORGANIZATION © 2026
+        SQL_SERVER: dbo.Users | TRANSACTION_ISOLATION_LEVEL: READ_COMMITTED | AGRICULTURAL_RESEARCH_ORGANIZATION © 2026
       </div>
 
     </div>

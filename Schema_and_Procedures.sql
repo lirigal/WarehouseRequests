@@ -1,5 +1,5 @@
 -- =====================================================================
--- SYSTEM: Volcani Center Warehouse Request Management System
+-- SYSTEM: Agricultural Research Organization Warehouse Request Management System
 -- MODULE: Item Attributes Management (מערכת מאפייני פריטים)
 -- DESIGNED BY: Senior Enterprise Architect
 -- COMPATIBILITY: SQL Server 2012+

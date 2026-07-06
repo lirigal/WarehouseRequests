@@ -97,7 +97,7 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
 
   // Code level item selection storage
   const [selectedSkus, setSelectedSkus] = useState<string[]>(() => {
-    const saved = localStorage.getItem("volcani_catalog_selected_skus");
+    const saved = localStorage.getItem("agri_catalog_selected_skus");
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -155,8 +155,8 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
   // Sync rowsPerPage preference to localStorage
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
     try {
-      const userKey = `volcani_catalog_rows_per_page_${currentUser?.email || "guest"}`;
-      const saved = localStorage.getItem(userKey) || localStorage.getItem("volcani_catalog_rows_per_page");
+      const userKey = `agri_catalog_rows_per_page_${currentUser?.email || "guest"}`;
+      const saved = localStorage.getItem(userKey) || localStorage.getItem("agri_catalog_rows_per_page");
       if (saved) {
         const parsed = parseInt(saved, 10);
         if (!isNaN(parsed) && [5, 10, 20, 30, 50].includes(parsed)) {
@@ -170,8 +170,8 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
   // Automatically restore page size when user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_catalog_rows_per_page_${currentUser?.email || "guest"}`;
-      const saved = localStorage.getItem(userKey) || localStorage.getItem("volcani_catalog_rows_per_page");
+      const userKey = `agri_catalog_rows_per_page_${currentUser?.email || "guest"}`;
+      const saved = localStorage.getItem(userKey) || localStorage.getItem("agri_catalog_rows_per_page");
       if (saved) {
         const parsed = parseInt(saved, 10);
         if (!isNaN(parsed) && [5, 10, 20, 30, 50].includes(parsed)) {
@@ -187,15 +187,15 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
 
   useEffect(() => {
     try {
-      const userKey = `volcani_catalog_rows_per_page_${currentUser?.email || "guest"}`;
+      const userKey = `agri_catalog_rows_per_page_${currentUser?.email || "guest"}`;
       localStorage.setItem(userKey, String(rowsPerPage));
-      localStorage.setItem("volcani_catalog_rows_per_page", String(rowsPerPage));
+      localStorage.setItem("agri_catalog_rows_per_page", String(rowsPerPage));
     } catch (e) {}
   }, [rowsPerPage, currentUser]);
 
   // Save selection choices when they change
   useEffect(() => {
-    localStorage.setItem("volcani_catalog_selected_skus", JSON.stringify(selectedSkus));
+    localStorage.setItem("agri_catalog_selected_skus", JSON.stringify(selectedSkus));
   }, [selectedSkus]);
 
   // Sorting columns states (SKU, Name, Stock, Price, Shelf)
@@ -203,11 +203,11 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [currentPage, setCurrentPage] = useState(1);
   const [inventoryFilter, setInventoryFilter] = useState<"all" | "in_stock" | "out_of_stock">(() => {
-    return (localStorage.getItem("volcani_catalog_inventory_filter") as any) || "all";
+    return (localStorage.getItem("agri_catalog_inventory_filter") as any) || "all";
   });
 
   useEffect(() => {
-    localStorage.setItem("volcani_catalog_inventory_filter", inventoryFilter);
+    localStorage.setItem("agri_catalog_inventory_filter", inventoryFilter);
     setCurrentPage(1);
   }, [inventoryFilter]);
 
@@ -2104,7 +2104,7 @@ export const CatalogManagementForm: React.FC<CatalogManagementFormProps> = ({
 
                       <div className="absolute bottom-2 left-2 right-2 flex justify-between pointer-events-none">
                         <span className="text-[8px] font-bold bg-slate-900/75 text-white px-1.5 py-0.5 rounded backdrop-blur-xs font-mono uppercase tracking-wider">
-                          {isRtl ? "וולקני חקלאות" : "Volcani Agri"}
+                          {isRtl ? "מחקר חקלאי" : "Agri Research"}
                         </span>
                       </div>
                     </div>

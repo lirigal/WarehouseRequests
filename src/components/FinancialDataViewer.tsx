@@ -151,7 +151,7 @@ export const FinancialDataViewer: React.FC<FinancialDataViewerProps> = ({
   // Pagination State for Exchange Rates
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
     try {
-      const userKey = `volcani_rates_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_rates_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -168,7 +168,7 @@ export const FinancialDataViewer: React.FC<FinancialDataViewerProps> = ({
   // Restore pagination when user changes
   useEffect(() => {
     try {
-      const userKey = `volcani_rates_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_rates_rows_per_page_${currentUser?.id || "guest"}`;
       const saved = localStorage.getItem(userKey);
       if (saved) {
         const parsed = parseInt(saved, 10);
@@ -186,7 +186,7 @@ export const FinancialDataViewer: React.FC<FinancialDataViewerProps> = ({
   // Persist pagination on change
   useEffect(() => {
     try {
-      const userKey = `volcani_rates_rows_per_page_${currentUser?.id || "guest"}`;
+      const userKey = `agri_rates_rows_per_page_${currentUser?.id || "guest"}`;
       localStorage.setItem(userKey, String(rowsPerPage));
     } catch (e) {}
   }, [rowsPerPage, currentUser]);

@@ -142,7 +142,7 @@ export const initialRequests: WarehouseRequest[] = [
     attributeValueNameHe: "L (גדול)",
     attributeValueNameEn: "Large (L)",
     requestDate: "2026-05-26T14:30:00Z",
-    requestedBy: "dr.cohen@volcani.agri.gov.il",
+    requestedBy: "dr.cohen@agri.gov.il",
     statusHe: "אושר - ממתין לניפוק במחסן",
     statusEn: "Approved - Awaiting Dispatch"
   },
@@ -159,7 +159,7 @@ export const initialRequests: WarehouseRequest[] = [
     attributeValueNameHe: "כחול",
     attributeValueNameEn: "Blue",
     requestDate: "2026-05-27T09:15:00Z",
-    requestedBy: "sarah.levy@volcani.agri.gov.il",
+    requestedBy: "sarah.levy@agri.gov.il",
     statusHe: "בוצע - נופק וסופק בהצלחה",
     statusEn: "Dispatched & Delivered Successfully"
   }
@@ -168,7 +168,7 @@ export const initialRequests: WarehouseRequest[] = [
 export const initialAuditLogs: AuditLogEntry[] = [
   {
     id: "log-1",
-    userId: "svetlana@volcani.agri.gov.il",
+    userId: "svetlana@agri.gov.il",
     userName: "סבטלנה - מנהלת מחסן ראשית",
     actionType: "CREATE",
     tableName: "AttributeTypes",
@@ -178,7 +178,7 @@ export const initialAuditLogs: AuditLogEntry[] = [
   },
   {
     id: "log-2",
-    userId: "svetlana@volcani.agri.gov.il",
+    userId: "svetlana@agri.gov.il",
     userName: "סבטלנה - מנהלת מחסן ראשית",
     actionType: "ASSIGN",
     tableName: "ItemAttributeMapping",

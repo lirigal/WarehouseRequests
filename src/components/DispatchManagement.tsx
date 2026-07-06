@@ -123,8 +123,8 @@ export const DispatchManagement: React.FC<DispatchManagementProps> = ({
   // Pagination & rows per page states with account persistence
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(() => {
-    const userKey = `volcani_nipuk_rows_per_page_${currentUser.email || currentUser.id || "guest"}`;
-    const saved = localStorage.getItem(userKey) || localStorage.getItem("volcani_nipuk_rows_per_page");
+    const userKey = `agri_nipuk_rows_per_page_${currentUser.email || currentUser.id || "guest"}`;
+    const saved = localStorage.getItem(userKey) || localStorage.getItem("agri_nipuk_rows_per_page");
     if (saved) {
       const parsed = parseInt(saved, 10);
       if (!isNaN(parsed) && [5, 10, 20, 30, 50].includes(parsed)) {
@@ -137,8 +137,8 @@ export const DispatchManagement: React.FC<DispatchManagementProps> = ({
   // Pagination states for Pending Requests grid with account persistence
   const [pendingPage, setPendingPage] = useState(1);
   const [pendingRowsPerPage, setPendingRowsPerPage] = useState<number>(() => {
-    const userKey = `volcani_pending_requests_page_size_${currentUser.email || currentUser.id || "guest"}`;
-    const saved = localStorage.getItem(userKey) || localStorage.getItem("volcani_pending_requests_page_size");
+    const userKey = `agri_pending_requests_page_size_${currentUser.email || currentUser.id || "guest"}`;
+    const saved = localStorage.getItem(userKey) || localStorage.getItem("agri_pending_requests_page_size");
     if (saved) {
       const parsed = parseInt(saved, 10);
       if (!isNaN(parsed) && [5, 10, 20, 30, 50].includes(parsed)) {
@@ -150,8 +150,8 @@ export const DispatchManagement: React.FC<DispatchManagementProps> = ({
 
   // Automatically restore rowsPerPage/pendingRowsPerPage when current user changes (logging in again or shifting sessions)
   React.useEffect(() => {
-    const userKey = `volcani_nipuk_rows_per_page_${currentUser.email || currentUser.id || "guest"}`;
-    const saved = localStorage.getItem(userKey) || localStorage.getItem("volcani_nipuk_rows_per_page");
+    const userKey = `agri_nipuk_rows_per_page_${currentUser.email || currentUser.id || "guest"}`;
+    const saved = localStorage.getItem(userKey) || localStorage.getItem("agri_nipuk_rows_per_page");
     if (saved) {
       const parsed = parseInt(saved, 10);
       if (!isNaN(parsed) && [5, 10, 20, 30, 50].includes(parsed)) {
@@ -161,8 +161,8 @@ export const DispatchManagement: React.FC<DispatchManagementProps> = ({
       setRowsPerPage(10);
     }
 
-    const pendingUserKey = `volcani_pending_requests_page_size_${currentUser.email || currentUser.id || "guest"}`;
-    const pendingSaved = localStorage.getItem(pendingUserKey) || localStorage.getItem("volcani_pending_requests_page_size");
+    const pendingUserKey = `agri_pending_requests_page_size_${currentUser.email || currentUser.id || "guest"}`;
+    const pendingSaved = localStorage.getItem(pendingUserKey) || localStorage.getItem("agri_pending_requests_page_size");
     if (pendingSaved) {
       const parsed = parseInt(pendingSaved, 10);
       if (!isNaN(parsed) && [5, 10, 20, 30, 50].includes(parsed)) {
@@ -179,19 +179,19 @@ export const DispatchManagement: React.FC<DispatchManagementProps> = ({
   const handleRowsPerPageChange = (size: number) => {
     setRowsPerPage(size);
     setCurrentPage(1);
-    const userKey = `volcani_nipuk_rows_per_page_${currentUser.email || currentUser.id || "guest"}`;
+    const userKey = `agri_nipuk_rows_per_page_${currentUser.email || currentUser.id || "guest"}`;
     localStorage.setItem(userKey, String(size));
     // Also save in general for fallback
-    localStorage.setItem("volcani_nipuk_rows_per_page", String(size));
+    localStorage.setItem("agri_nipuk_rows_per_page", String(size));
   };
 
   const handlePendingRowsPerPageChange = (size: number) => {
     setPendingRowsPerPage(size);
     setPendingPage(1);
-    const userKey = `volcani_pending_requests_page_size_${currentUser.email || currentUser.id || "guest"}`;
+    const userKey = `agri_pending_requests_page_size_${currentUser.email || currentUser.id || "guest"}`;
     localStorage.setItem(userKey, String(size));
     // Also save in general for fallback
-    localStorage.setItem("volcani_pending_requests_page_size", String(size));
+    localStorage.setItem("agri_pending_requests_page_size", String(size));
   };
 
   // Filter pending order requests (which can be linked)
@@ -1640,13 +1640,13 @@ export const DispatchManagement: React.FC<DispatchManagementProps> = ({
                             <td className="py-3.5 px-3 leading-tight font-sans">
                               {(() => {
                                 const displayName = 
-                                  req.requestedBy === "svetlana@volcani.agri.gov.il"
+                                  req.requestedBy === "svetlana@agri.gov.il"
                                     ? (isRtl ? "סבטלנה צ'רניצקי" : "Svetlana Chernitsky")
-                                    : req.requestedBy === "dr.cohen@volcani.agri.gov.il"
+                                    : req.requestedBy === "dr.cohen@agri.gov.il"
                                     ? (isRtl ? 'ד"ר כהן (חוקר)' : "Dr. Cohen (Staff)")
-                                    : req.requestedBy === "sarah.levy@volcani.agri.gov.il"
+                                    : req.requestedBy === "sarah.levy@agri.gov.il"
                                     ? (isRtl ? "שרה לוי (חוקרת)" : "Sarah Levy (Staff)")
-                                    : req.requestedBy === "ela.v@volcani.agri.gov.il"
+                                    : req.requestedBy === "ela.v@agri.gov.il"
                                     ? ".ela.v"
                                     : req.requestedBy ? req.requestedBy.split("@")[0] : "";
                                 return (
