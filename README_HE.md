@@ -942,15 +942,10 @@ MANAGER ו־ADMIN בלבד.
 
 > **הערה:** תרשים ה־Mermaid המופיע בהמשך נשאר באנגלית, מאחר שהוא מייצג את שמות הישויות והטבלאות בפועל במסד הנתונים.
 
-```mermaid
-erDiagram
-    AttributeTypes ||--o{ AttributeValues : "has (one-to-many)"
-    AttributeTypes ||--o{ ItemAttributeMapping : "defines (one-to-many)"
-    ItemAttributeMapping ||--o{ ItemAttributeAllowedValues : "constrains (one-to-many)"
-    AttributeValues ||--o{ ItemAttributeAllowedValues : "allows (one-to-many)"
-    
-    ItemAttributeMapping ||--o{ RequestAttributes : "references"
-    AttributeValues ||--o{ RequestAttributes : "selected_in"
+
+---
+
+  **erDiagram**
     
     AttributeTypes {
         int AttributeTypeId PK "IDENTITY(1,1)"
@@ -1019,7 +1014,7 @@ erDiagram
         datetime ActionDate "DEFAULT GETDATE()"
         nvarchar IPAddress "NULL"
     }
-```
+
 
 ---
 
