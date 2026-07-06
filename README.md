@@ -274,6 +274,7 @@ A clean, modular overview of the repository's files and folders:
 
 ### Login Gateway
 ![Login Screen](docs/images/login.png)
+
 *Protects warehouse integrity with modern email auth and Teudat Zehut ID verification.*
 
 ### Dynamic Dashboard
@@ -306,6 +307,7 @@ A clean, modular overview of the repository's files and folders:
 
 ### Immutable Forensic Log
 ![Audit Log](docs/images/audit-log.png)
+
 *Tracks every database modification, maintaining compliance with full JSON pre- vs. post-state diffs.*
 
 ### Workspace Settings
