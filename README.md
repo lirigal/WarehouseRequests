@@ -274,6 +274,7 @@ A clean, modular overview of the repository's files and folders:
 
 ### Login Gateway
 ![Login Screen](docs/images/login.png)
+
 *Protects warehouse integrity with modern email auth and Teudat Zehut ID verification.*
 
 ### Dynamic Dashboard
